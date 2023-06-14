@@ -1,21 +1,25 @@
-/*
- * APDS.h
- *
- *  Created on: May 27, 2023
- *      Author: seanw
- */
+/*!
+ @file 		APDS.h
+ @brief		This is a header file for APDS.c, the color sensor driver.
+ @author	Sean Wahl
+ @date		June 14, 2023
+*/
 
 #ifndef INC_APDS_H_
 #define INC_APDS_H_
 
 #include "stm32f4xx_hal.h"
 
+/*! @struct APDSType
+ 	@brief 	This structure contains the pertinent information for using and reading data
+			from an APDS sensor and should be used like an object.
+ */
 typedef struct APDSType {
-		I2C_HandleTypeDef*  hi2c;
-		uint16_t			R;
-		uint16_t			G;
-		uint16_t 			B;
-		uint32_t			GAIN;
+		I2C_HandleTypeDef*  hi2c; 	/*!< The I2C handle connected to the APDS sensor */
+		uint16_t			R;    	/*!< Red color data */
+		uint16_t			G;		/*!< Green color data */
+		uint16_t 			B;		/*!< Blue color data */
+		uint32_t			GAIN;  	/*!< The gain value applied to the color data */
 	} APDS_t;
 
 /* APDS9960 Registers */

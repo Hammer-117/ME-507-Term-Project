@@ -1,0 +1,35 @@
+\hypertarget{encoder_8h_source}{}\doxysection{encoder.\+h}
+\label{encoder_8h_source}\index{Inc/encoder.h@{Inc/encoder.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ encoder.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Created\ on:\ May\ 29,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ seanw}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ INC\_ENCODER\_H\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ INC\_ENCODER\_H\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_encoder_type}{EncoderType}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ TIM\_HandleTypeDef*\ \ htim;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ int64\_t\ \ \ \ \ \ \ \ \ \ \ \ \ ARR;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ int32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ c2r;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ int32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ prev;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ int32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ count;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ countR;}
+\DoxyCodeLine{00021\ \ \ \ \ \}\ \mbox{\hyperlink{struct_encoder_type}{encoder\_t}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \mbox{\hyperlink{struct_encoder_type}{encoder\_t}}\ encoder\_Init(TIM\_HandleTypeDef*\ htim,\ uint32\_t\ ARR,\ uint32\_t\ CPR,\ uint32\_t\ GR);}
+\DoxyCodeLine{00024\ \mbox{\hyperlink{struct_encoder_type}{encoder\_t}}\ encoder\_Update(\mbox{\hyperlink{struct_encoder_type}{encoder\_t}}\ myEnc);}
+\DoxyCodeLine{00025\ \mbox{\hyperlink{struct_encoder_type}{encoder\_t}}\ encoder\_Zero(\mbox{\hyperlink{struct_encoder_type}{encoder\_t}}\ myEnc);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_ENCODER\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,214 @@
+\hypertarget{_a_p_d_s_8h}{}\doxysection{Inc/\+APDS.h File Reference}
+\label{_a_p_d_s_8h}\index{Inc/APDS.h@{Inc/APDS.h}}
+
+
+This is a header file for \mbox{\hyperlink{_a_p_d_s_8c}{APDS.\+c}}, the color sensor driver.  
+
+
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_a_p_d_s_type}{APDSType}}
+\begin{DoxyCompactList}\small\item\em This structure contains the pertinent information for using and reading data from an APDS sensor and should be used like an object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_a_p_d_s_8h_aebaa346d16e927ee770e4420f6f92898}\label{_a_p_d_s_8h_aebaa346d16e927ee770e4420f6f92898}} 
+\#define {\bfseries APDS9960\+\_\+\+ADDR}~0x72
+\item 
+\mbox{\Hypertarget{_a_p_d_s_8h_a04ef2ad8be924c3c6f38d7d2ca3072f7}\label{_a_p_d_s_8h_a04ef2ad8be924c3c6f38d7d2ca3072f7}} 
+\#define {\bfseries APDS9960\+\_\+\+ENABLE}~0x80
+\item 
+\mbox{\Hypertarget{_a_p_d_s_8h_a517cfcae33dfb07301c9e602c566794b}\label{_a_p_d_s_8h_a517cfcae33dfb07301c9e602c566794b}} 
+\#define {\bfseries APDS9960\+\_\+\+ATIME}~0x81
+\item 
+\mbox{\Hypertarget{_a_p_d_s_8h_addeac4e54f6ffa11a93c35acd1c45a99}\label{_a_p_d_s_8h_addeac4e54f6ffa11a93c35acd1c45a99}} 
+\#define {\bfseries APDS9960\+\_\+\+CONTROL}~0x8F
+\item 
+\mbox{\Hypertarget{_a_p_d_s_8h_a3acd442ebc9deb63cc84366938b201da}\label{_a_p_d_s_8h_a3acd442ebc9deb63cc84366938b201da}} 
+\#define {\bfseries APDS9960\+\_\+\+STATUS}~0x93
+\item 
+\mbox{\Hypertarget{_a_p_d_s_8h_acc2d9da233075057bf8fd57a8a112482}\label{_a_p_d_s_8h_acc2d9da233075057bf8fd57a8a112482}} 
+\#define {\bfseries APDS9960\+\_\+\+RDATAL}~0x96
+\item 
+\mbox{\Hypertarget{_a_p_d_s_8h_ac0464b97d2c2f05f63f7aef8626d6991}\label{_a_p_d_s_8h_ac0464b97d2c2f05f63f7aef8626d6991}} 
+\#define {\bfseries APDS9960\+\_\+\+RDATAH}~0x97
+\item 
+\mbox{\Hypertarget{_a_p_d_s_8h_a94544fcff20b14408316c80ac63c83d1}\label{_a_p_d_s_8h_a94544fcff20b14408316c80ac63c83d1}} 
+\#define {\bfseries APDS9960\+\_\+\+GDATAL}~0x98
+\item 
+\mbox{\Hypertarget{_a_p_d_s_8h_ac79dcf34fad6c78fc51ddeb3dcb046fc}\label{_a_p_d_s_8h_ac79dcf34fad6c78fc51ddeb3dcb046fc}} 
+\#define {\bfseries APDS9960\+\_\+\+GDATAH}~0x99
+\item 
+\mbox{\Hypertarget{_a_p_d_s_8h_ab649140f28099089cf044f12f456e073}\label{_a_p_d_s_8h_ab649140f28099089cf044f12f456e073}} 
+\#define {\bfseries APDS9960\+\_\+\+BDATAL}~0x9A
+\item 
+\mbox{\Hypertarget{_a_p_d_s_8h_a8957f3c7d7f7ae94334bb247b02a3fda}\label{_a_p_d_s_8h_a8957f3c7d7f7ae94334bb247b02a3fda}} 
+\#define {\bfseries APDS9960\+\_\+\+BDATAH}~0x9B
+\item 
+\mbox{\Hypertarget{_a_p_d_s_8h_ad1d7cde09535c256d950949d1ef761d0}\label{_a_p_d_s_8h_ad1d7cde09535c256d950949d1ef761d0}} 
+\#define {\bfseries APDS9960\+\_\+\+PDATA}~0x9C
+\item 
+\mbox{\Hypertarget{_a_p_d_s_8h_a8d23feea868a983c8c2b661e1e16972f}\label{_a_p_d_s_8h_a8d23feea868a983c8c2b661e1e16972f}} 
+\#define {\bfseries RED}~0
+\item 
+\mbox{\Hypertarget{_a_p_d_s_8h_acfbc006ea433ad708fdee3e82996e721}\label{_a_p_d_s_8h_acfbc006ea433ad708fdee3e82996e721}} 
+\#define {\bfseries GREEN}~1
+\item 
+\mbox{\Hypertarget{_a_p_d_s_8h_a79d10e672abb49ad63eeaa8aaef57c38}\label{_a_p_d_s_8h_a79d10e672abb49ad63eeaa8aaef57c38}} 
+\#define {\bfseries BLUE}~2
+\item 
+\mbox{\Hypertarget{_a_p_d_s_8h_abf681265909adf3d3e8116c93c0ba179}\label{_a_p_d_s_8h_abf681265909adf3d3e8116c93c0ba179}} 
+\#define {\bfseries YELLOW}~3
+\item 
+\mbox{\Hypertarget{_a_p_d_s_8h_a3818b7c50ae3cf2e9ae39316586a1aa4}\label{_a_p_d_s_8h_a3818b7c50ae3cf2e9ae39316586a1aa4}} 
+\#define {\bfseries x1}~0x00
+\item 
+\mbox{\Hypertarget{_a_p_d_s_8h_adc588ae5854bec41ff3766b1797c30b0}\label{_a_p_d_s_8h_adc588ae5854bec41ff3766b1797c30b0}} 
+\#define {\bfseries x4}~0x01
+\item 
+\mbox{\Hypertarget{_a_p_d_s_8h_a4a81cd53c8ca8e24277104fdbfc977a1}\label{_a_p_d_s_8h_a4a81cd53c8ca8e24277104fdbfc977a1}} 
+\#define {\bfseries x16}~0x02
+\item 
+\mbox{\Hypertarget{_a_p_d_s_8h_a185fae60fd0e07a2127e06130a0a7bcf}\label{_a_p_d_s_8h_a185fae60fd0e07a2127e06130a0a7bcf}} 
+\#define {\bfseries x64}~0x03
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_a_p_d_s_8h_aad57907fea37a9ac08a665fef9aa8896}\label{_a_p_d_s_8h_aad57907fea37a9ac08a665fef9aa8896}} 
+typedef struct \mbox{\hyperlink{struct_a_p_d_s_type}{APDSType}} {\bfseries APDS\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_a_p_d_s_type}{APDS\+\_\+t}} \mbox{\hyperlink{_a_p_d_s_8h_a11fa06833127f55ec0e1a816c6caac6e}{APDS9960\+\_\+\+Init}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c, uint8\+\_\+t int\+\_\+time, uint8\+\_\+t gain)
+\begin{DoxyCompactList}\small\item\em APDS9960 Object initialization function. This function configures an APDS struct to include all pertinent information for gathering data from the sensor such as the ADC integration time and the sensor output\textquotesingle{}s gain value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_a_p_d_s_type}{APDS\+\_\+t}} \mbox{\hyperlink{_a_p_d_s_8h_a9d98181e79a290723883b44fc2586ada}{APDS9960\+\_\+\+Read\+Color\+Data}} (\mbox{\hyperlink{struct_a_p_d_s_type}{APDS\+\_\+t}} my\+\_\+\+APDS)
+\begin{DoxyCompactList}\small\item\em APDS9960 Main color reading function This function accesses the APDS\textquotesingle{}s memory registers to extract the red, green, and blue color values of what is in front of it. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_a_p_d_s_type}{APDS\+\_\+t}} \mbox{\hyperlink{_a_p_d_s_8h_a7c656f441e7d4a65df7934fb13e7ce22}{APDS9960\+\_\+\+Adjust\+Data}} (\mbox{\hyperlink{struct_a_p_d_s_type}{APDS\+\_\+t}} my\+APDS)
+\begin{DoxyCompactList}\small\item\em APDS9960 Data adjustment function This function takes the APDS\textquotesingle{}s current color values and adjusts them to the standard scale (0x\+FF maximum). A byproduct of this normalization is that the highest color value present becomes 0x\+FF. This makes it impossible to read dark colors but works well for bright colors. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{_a_p_d_s_8h_a583044343212ddc9f42e0c6a23f735b3}{APDS9960\+\_\+\+Color}} (\mbox{\hyperlink{struct_a_p_d_s_type}{APDS\+\_\+t}} my\+APDS)
+\begin{DoxyCompactList}\small\item\em APDS9960 Color detection function This function utilizes the Read\+Color\+Data() and Adjust\+Data() functions in order to determine what color it is looking at. These colors are limited to red, green, blue, and yellow. These colors have been assigned values 0-\/3, respectively. If it cannot determine if it\textquotesingle{}s looking at a color it will return 4. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{_a_p_d_s_8h_a2dd074f033805ac028977c2adcc6e4a9}{APDS9960\+\_\+\+Prox}} (\mbox{\hyperlink{struct_a_p_d_s_type}{APDS\+\_\+t}} my\+APDS)
+\begin{DoxyCompactList}\small\item\em APDS9960 Proximity detection function This function accesses the APDS\textquotesingle{}s proximity register and returns the value. Note\+: the proximity data ranges from 0x00 to 0x\+FF, with 0x\+FF being the shortest distance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is a header file for \mbox{\hyperlink{_a_p_d_s_8c}{APDS.\+c}}, the color sensor driver. 
+
+\begin{DoxyAuthor}{Author}
+Sean Wahl 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 14, 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_a_p_d_s_8h_a7c656f441e7d4a65df7934fb13e7ce22}\label{_a_p_d_s_8h_a7c656f441e7d4a65df7934fb13e7ce22}} 
+\index{APDS.h@{APDS.h}!APDS9960\_AdjustData@{APDS9960\_AdjustData}}
+\index{APDS9960\_AdjustData@{APDS9960\_AdjustData}!APDS.h@{APDS.h}}
+\doxysubsubsection{\texorpdfstring{APDS9960\_AdjustData()}{APDS9960\_AdjustData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_a_p_d_s_type}{APDS\+\_\+t}} APDS9960\+\_\+\+Adjust\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_p_d_s_type}{APDS\+\_\+t}}}]{my\+APDS }\end{DoxyParamCaption})}
+
+
+
+APDS9960 Data adjustment function This function takes the APDS\textquotesingle{}s current color values and adjusts them to the standard scale (0x\+FF maximum). A byproduct of this normalization is that the highest color value present becomes 0x\+FF. This makes it impossible to read dark colors but works well for bright colors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+APDS} & APDS9960 struct type \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & the APDS struct back, now with the adjusted RGB data to be accessed from its fields \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{_a_p_d_s_8h_a583044343212ddc9f42e0c6a23f735b3}\label{_a_p_d_s_8h_a583044343212ddc9f42e0c6a23f735b3}} 
+\index{APDS.h@{APDS.h}!APDS9960\_Color@{APDS9960\_Color}}
+\index{APDS9960\_Color@{APDS9960\_Color}!APDS.h@{APDS.h}}
+\doxysubsubsection{\texorpdfstring{APDS9960\_Color()}{APDS9960\_Color()}}
+{\footnotesize\ttfamily uint32\+\_\+t APDS9960\+\_\+\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_p_d_s_type}{APDS\+\_\+t}}}]{my\+APDS }\end{DoxyParamCaption})}
+
+
+
+APDS9960 Color detection function This function utilizes the Read\+Color\+Data() and Adjust\+Data() functions in order to determine what color it is looking at. These colors are limited to red, green, blue, and yellow. These colors have been assigned values 0-\/3, respectively. If it cannot determine if it\textquotesingle{}s looking at a color it will return 4. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+APDS} & APDS9960 struct type \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & the number associated with the color sensed (RBGY -\/ 0123) \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{_a_p_d_s_8h_a11fa06833127f55ec0e1a816c6caac6e}\label{_a_p_d_s_8h_a11fa06833127f55ec0e1a816c6caac6e}} 
+\index{APDS.h@{APDS.h}!APDS9960\_Init@{APDS9960\_Init}}
+\index{APDS9960\_Init@{APDS9960\_Init}!APDS.h@{APDS.h}}
+\doxysubsubsection{\texorpdfstring{APDS9960\_Init()}{APDS9960\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_a_p_d_s_type}{APDS\+\_\+t}} APDS9960\+\_\+\+Init (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2c,  }\item[{uint8\+\_\+t}]{int\+\_\+time,  }\item[{uint8\+\_\+t}]{gain }\end{DoxyParamCaption})}
+
+
+
+APDS9960 Object initialization function. This function configures an APDS struct to include all pertinent information for gathering data from the sensor such as the ADC integration time and the sensor output\textquotesingle{}s gain value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hi2c} & I2C handle pointer \\
+\hline
+{\em int\+\_\+time} & ADC integration time, see data sheet for specifics but 0x\+DB is around 100ms \\
+\hline
+{\em gain} & Sensor output\textquotesingle{}s gain (x1 is the only one calibrated to an 0x\+FF maximum) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & an APDS struct for future command use. ~\newline
+ \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{_a_p_d_s_8h_a2dd074f033805ac028977c2adcc6e4a9}\label{_a_p_d_s_8h_a2dd074f033805ac028977c2adcc6e4a9}} 
+\index{APDS.h@{APDS.h}!APDS9960\_Prox@{APDS9960\_Prox}}
+\index{APDS9960\_Prox@{APDS9960\_Prox}!APDS.h@{APDS.h}}
+\doxysubsubsection{\texorpdfstring{APDS9960\_Prox()}{APDS9960\_Prox()}}
+{\footnotesize\ttfamily uint8\+\_\+t APDS9960\+\_\+\+Prox (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_p_d_s_type}{APDS\+\_\+t}}}]{my\+APDS }\end{DoxyParamCaption})}
+
+
+
+APDS9960 Proximity detection function This function accesses the APDS\textquotesingle{}s proximity register and returns the value. Note\+: the proximity data ranges from 0x00 to 0x\+FF, with 0x\+FF being the shortest distance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+APDS} & APDS9960 struct type \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & the proximity value from the APDS\textquotesingle{}s register \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{_a_p_d_s_8h_a9d98181e79a290723883b44fc2586ada}\label{_a_p_d_s_8h_a9d98181e79a290723883b44fc2586ada}} 
+\index{APDS.h@{APDS.h}!APDS9960\_ReadColorData@{APDS9960\_ReadColorData}}
+\index{APDS9960\_ReadColorData@{APDS9960\_ReadColorData}!APDS.h@{APDS.h}}
+\doxysubsubsection{\texorpdfstring{APDS9960\_ReadColorData()}{APDS9960\_ReadColorData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_a_p_d_s_type}{APDS\+\_\+t}} APDS9960\+\_\+\+Read\+Color\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_p_d_s_type}{APDS\+\_\+t}}}]{my\+APDS }\end{DoxyParamCaption})}
+
+
+
+APDS9960 Main color reading function This function accesses the APDS\textquotesingle{}s memory registers to extract the red, green, and blue color values of what is in front of it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+APDS} & APDS9960 struct type \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & the APDS struct back, now with the RGB data to be accessed from its fields \\
+\hline
+\end{DoxyRetVals}

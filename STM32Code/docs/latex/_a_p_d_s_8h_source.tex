@@ -1,0 +1,56 @@
+\hypertarget{_a_p_d_s_8h_source}{}\doxysection{APDS.\+h}
+\label{_a_p_d_s_8h_source}\index{Inc/APDS.h@{Inc/APDS.h}}
+\mbox{\hyperlink{_a_p_d_s_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ INC\_APDS\_H\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ INC\_APDS\_H\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_a_p_d_s_type}{APDSType}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ I2C\_HandleTypeDef*\ \ \mbox{\hyperlink{struct_a_p_d_s_type_a5475ce92ff82b6ce4f037761d7409ce8}{hi2c}};\ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ uint16\_t\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_a_p_d_s_type_adc953f4d3ee88e57bd35686081d89f47}{R}};\ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ uint16\_t\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_a_p_d_s_type_aaf2269e59384dedf506da161d378d5e9}{G}};\ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ uint16\_t\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_a_p_d_s_type_a3524f73d7e9d79d43ccd633894049ef2}{B}};\ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_a_p_d_s_type_a0fa9938d4cb78080aab4d15ce2744e42}{GAIN}};\ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \}\ \mbox{\hyperlink{struct_a_p_d_s_type}{APDS\_t}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/*\ APDS9960\ Registers\ */}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ APDS9960\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x72}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ APDS9960\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x80}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ APDS9960\_ATIME\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x81}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ APDS9960\_CONTROL\ \ \ \ \ \ \ \ \ \ \ \ 0x8F}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ APDS9960\_STATUS\ \ \ \ \ \ \ \ \ \ \ \ \ 0x93}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ APDS9960\_RDATAL\ \ \ \ \ \ \ \ \ \ \ \ \ 0x96}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ APDS9960\_RDATAH\ \ \ \ \ \ \ \ \ \ \ \ \ 0x97}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ APDS9960\_GDATAL\ \ \ \ \ \ \ \ \ \ \ \ \ 0x98}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ APDS9960\_GDATAH\ \ \ \ \ \ \ \ \ \ \ \ \ 0x99}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ APDS9960\_BDATAL\ \ \ \ \ \ \ \ \ \ \ \ \ 0x9A}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ APDS9960\_BDATAH\ \ \ \ \ \ \ \ \ \ \ \ \ 0x9B}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ APDS9960\_PDATA\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x9C}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{/*\ Hungry\ Hippo\ Ball\ Colors\ */}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ RED\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ GREEN\ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ BLUE\ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ YELLOW\ \ \ \ \ \ 3}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{/*\ ALS\ Control\ Gains\ */}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ x1\ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ x4\ \ \ \ \ \ 0x01}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ x16\ \ \ \ \ 0x02}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ x64\ \ \ \ \ 0x03}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{comment}{/*\ Function\ Prototypes\ */}}
+\DoxyCodeLine{00053\ \mbox{\hyperlink{struct_a_p_d_s_type}{APDS\_t}}\ \mbox{\hyperlink{_a_p_d_s_8h_a11fa06833127f55ec0e1a816c6caac6e}{APDS9960\_Init}}(I2C\_HandleTypeDef*\ hi2c,\ uint8\_t\ int\_time,\ uint8\_t\ gain);}
+\DoxyCodeLine{00054\ \mbox{\hyperlink{struct_a_p_d_s_type}{APDS\_t}}\ \mbox{\hyperlink{_a_p_d_s_8h_a9d98181e79a290723883b44fc2586ada}{APDS9960\_ReadColorData}}(\mbox{\hyperlink{struct_a_p_d_s_type}{APDS\_t}}\ my\_APDS);}
+\DoxyCodeLine{00055\ \mbox{\hyperlink{struct_a_p_d_s_type}{APDS\_t}}\ \mbox{\hyperlink{_a_p_d_s_8h_a7c656f441e7d4a65df7934fb13e7ce22}{APDS9960\_AdjustData}}(\mbox{\hyperlink{struct_a_p_d_s_type}{APDS\_t}}\ myAPDS);}
+\DoxyCodeLine{00056\ uint32\_t\ \mbox{\hyperlink{_a_p_d_s_8h_a583044343212ddc9f42e0c6a23f735b3}{APDS9960\_Color}}(\mbox{\hyperlink{struct_a_p_d_s_type}{APDS\_t}}\ myAPDS);}
+\DoxyCodeLine{00057\ uint8\_t\ \mbox{\hyperlink{_a_p_d_s_8h_a2dd074f033805ac028977c2adcc6e4a9}{APDS9960\_Prox}}(\mbox{\hyperlink{struct_a_p_d_s_type}{APDS\_t}}\ myAPDS);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ SRC\_APDS\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,38 @@
+\hypertarget{_t_c_r_t_8h_source}{}\doxysection{TCRT.\+h}
+\label{_t_c_r_t_8h_source}\index{Inc/TCRT.h@{Inc/TCRT.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ TCRT.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Created\ on:\ May\ 28,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ seanw}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ INC\_TCRT\_H\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ INC\_TCRT\_H\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_t_c_r_t_type}{TCRTType}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ ADC\_HandleTypeDef*\ \ hadc;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ channel;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ GPIO\_TypeDef*\ \ \ \ \ \ \ Dig\_Port;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ uint16\_t\ \ \ \ \ \ \ \ \ \ \ \ Dig\_Pin;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ uint16\_t\ \ \ \ \ \ \ \ \ \ \ \ Analog;}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ uint16\_t\ \ \ \ \ \ \ \ \ \ \ \ Digital;}
+\DoxyCodeLine{00020\ \ \ \ \ \}\ \mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keywordtype}{void}\ TCRT\_Error(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}}\ TCRT\_Init(ADC\_HandleTypeDef*\ hadc,\ uint32\_t\ channel,\ GPIO\_TypeDef*\ Dig\_Port,\ uint16\_t\ Dig\_Pin);}
+\DoxyCodeLine{00027\ \mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}}\ TCRT\_ReadAll(\mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}}\ myTCRT);}
+\DoxyCodeLine{00028\ \mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}}\ TCRT\_ReadAnalog(\mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}}\ myTCRT);}
+\DoxyCodeLine{00029\ \mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}}\ TCRT\_ReadDigital(\mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}}\ myTCRT);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_TCRT\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
