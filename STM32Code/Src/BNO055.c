@@ -1,12 +1,18 @@
-/*
- * IMU.c
- *
- *  Created on: May 29, 2023
- *      Author: seanw
- */
+/*!
+ @file 		BNO055.c
+ @brief		This file provides the functionality to use a BNO055 inertial measurement unit.
+ @author	Sean Wahl
+ @date		June 14, 2023
+*/
 
 #include "BNO055.h"
 
+/*!
+ @brief BNO055 Object initialization function.
+ This function configures a BNO055 struct to include the I2C lines attached to the IMU.
+ @param 	hi2c: 		I2C handle pointer
+ @retval 				Returns a BNO055 struct for future command use. 	
+*/
 BNO055_t BNO_Init(I2C_HandleTypeDef* hi2c) {
 	BNO055_t myBNO;
 	myBNO.hi2c = hi2c;
@@ -16,7 +22,12 @@ BNO055_t BNO_Init(I2C_HandleTypeDef* hi2c) {
 	return myBNO;
 }
 
-
+/*!
+ @brief BNO055 Change operating mode function.
+ This function writes to the BNO055 to change the operating mode its in to a user specified one.
+ @param 	myBNO:		BNO055 struct type
+ @retval 				Returns the BNO struct back (though not necessary)
+*/
 BNO055_t BNO_OprMode(BNO055_t myBNO, uint8_t mode) {
 	uint8_t data[1];
 	data[0] = CONFIGMODE;
@@ -32,6 +43,13 @@ BNO055_t BNO_OprMode(BNO055_t myBNO, uint8_t mode) {
 	return myBNO;
 }
 
+/*!
+ @brief BNO055 Calibration status.
+ This reads from the BNO055's calibration registers and returns them as part of the BNO struct. All
+ statuses will be 3 when the BNO is fully calibrated (assuming NDOF mode).
+ @param 	myBNO:		BNO055 struct type
+ @retval 				Returns the BNO struct for access to the calibration statuses
+*/
 BNO055_t BNO_CalStat(BNO055_t myBNO) {
 	uint8_t cal_byte;
 
@@ -45,6 +63,13 @@ BNO055_t BNO_CalStat(BNO055_t myBNO) {
 	return myBNO;
 }
 
+/*!
+ @brief BNO055 Euler angles.
+ This function reads from the BNO055's euler angle registers (heading, roll, and pitch) and returns 
+ them as part of the BNO struct. The system should be calibrated before using this function.
+ @param 	myBNO:		BNO055 struct type
+ @retval 				Returns the BNO struct back for access to the euler angles.
+*/
 BNO055_t BNO_GetEul(BNO055_t myBNO) {
 	uint8_t mag_bytes[6];
 
@@ -59,12 +84,4 @@ BNO055_t BNO_GetEul(BNO055_t myBNO) {
 
 	return myBNO;
 }
-
-
-//BNO055_t BNO_GetAcc(BNO055_t myBNO);
-
-
-//BNO055_t BNO_GetGyr(BNO055_t myBNO);
-
-
 

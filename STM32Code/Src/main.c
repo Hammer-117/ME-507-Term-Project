@@ -2,7 +2,11 @@
 /**
   ******************************************************************************
   * @file           : main.c
-  * @brief          : Main program body
+  * @brief          : Main program body to implement simple remote control and
+  *                   deadman's functionality. For this file, please just look
+  *                   at the source code.
+  * @author           Sean Wahl (+STM)
+  * @date           : June 14, 2023
   ******************************************************************************
   * @attention
   *
@@ -167,16 +171,8 @@ int main(void)
 
   // Arduino I2C addr and data holder (0x69<<1)
   uint8_t Ard_addr = 0xD2;
-  //uint8_t Ard_addr = 0x69;
   uint8_t Deadman = 0;
   uint8_t ManCont = 0;
-  uint8_t BallTake = 0;
-
-  // Variables for P Control
-  int32_t Kpa = 0.25;
-  int32_t Kpd = 0.25;
-  int32_t angle;
-  int32_t distance;
 
   /* USER CODE END 2 */
 
@@ -200,31 +196,6 @@ int main(void)
 
 	  //Check if Ball Carriage is full
 	  isFull = !HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_2);
-
-	  /*
-	  if (BatLvl < 3113) {
-		  state = S1_DEADBAT;
-		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_SET); //BAT LED On
-		  setDuty(my_motor1, 0x00);
-		  setDuty(my_motor2, 0x00);
-		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_RESET); //Disable Motor Relay
-	  	  }
-	  else if (ManCont)  {
-		  state = S3_MANUAL;
-	  	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_SET); //Enable Motor Relay
-	  	  }
-	  else if (Deadman) {
-		  state = S4_GO;
-		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_SET); //Enable Motor Relay
-		  }
-	  else {
-		  state = S2_DEADMAN;
-		  setDuty(my_motor1, 0x00);
-		  setDuty(my_motor2, 0x00);
-		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_RESET); //Disable Motor Relay
-		  }
-		  */
-
 
 	  if (state == S1_DEADBAT) {
 		  if (BatLvl > 3113) {
@@ -279,110 +250,6 @@ int main(void)
 			  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_RESET); //Disable Motor Relay
 		  }
 	  }
-	  //else if (Deadman && isFull) { state = S4_AUTOHOME;}
-	  //else if (Deadman) { state = S5_AUTOBALL;}
-
-	  /*
-	  myBNO = BNO_GetEul(myBNO);
-
-	  myTCRTR = TCRT_ReadDigital(myTCRTR);
-	  myTCRTL = TCRT_ReadDigital(myTCRTL);
-
-	  setDuty(my_motor1, DTY1);
-	  setDuty(my_motor2, DTY2);
-	  setDuty(my_motor3, DTY3);
-
-
-	  myEnc1 = encoder_Update(myEnc1);
-	  //myEnc5 = encoder_Update(myEnc5);
-	  */
-
-/*
-	  if (state <= 4 && state != 0) {
-		  switch(state) {
-
-		  	 //Dead Battery
-			 case 1:
-				 HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_RESET); //Disable Motor Relay
-				 HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_SET); //Low Bat LED On
-
-			 //Dead Man
-			 case 2:
-				 HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_RESET); //Disable Motor Relay
-				 setDuty(my_motor1, 0x00);
-				 setDuty(my_motor2, 0x00);
-
-			 // Manual Control
-			 case 3:
-				 HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_SET); //Enable Motor Relay
-				 DTY1 = ContX/2 + ContY/2;
-				 DTY2 = -ContX/2 + ContY/2;
-				 setDuty(my_motor1, DTY1);
-				 setDuty(my_motor2, DTY2);
-				 /*
-				 BallTake = Ard_msg[6];
-				 if (BallTake) { setDuty(my_motor3, 0x60);}
-				 else {setDuty(my_motor3, -0x60);}
-
-
-			 // Autocontrol go home
-			 case 4:
-				 HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_SET); //Enable Motor Relay
-				 setDuty(my_motor1, 0x40);
-				 setDuty(my_motor2, -0x40);
-
-
-				 /*angle = (Ard_msg[7]<<8) | Ard_msg[8];
-				distance = (Ard_msg[9]<<8) | Ard_msg[10];
-				if (angle > 10) {
-					DTY1 = Kpa*angle;
-					DTY2 = Kpa*angle;
-					setDuty(my_motor1, DTY1);
-					setDuty(my_motor2, DTY2);
-				}
-				else {
-					DTY1 = Kpd*distance;
-					DTY2 = -Kpd*distance;
-				}
-				if (BallTake) {setDuty(my_motor3, -0x60);}
-				else {setDuty(my_motor3, 0x00);}
-
-			 // Autocontrol go ball
-			 case 5:
-				 angle = (Ard_msg[0]<<8) | Ard_msg[1];
-				 distance = (Ard_msg[2]<<8) | Ard_msg[3];
-				 if (angle > 10) {
-			 		 DTY1 = Kpa*angle;
-					 DTY2 = Kpa*angle;
-					 setDuty(my_motor1, DTY1);
-					 setDuty(my_motor2, DTY2);
-				 }
-				 else {
-					 DTY1 = Kpd*distance;
-					 DTY2 = -Kpd*distance;
-					 setDuty(my_motor1, DTY1);
-					 setDuty(my_motor2, DTY2);
-				 }
-
-				 prox = APDS9960_Prox(myAPDS);
-			     color = APDS9960_Color(myAPDS);
-				 if ((prox > 128) && (color == desired_color)) {
-					 setDuty(my_motor3, 0x60);
-				 }
-				 else if ((prox > 128) && (color != desired_color)) {
-					 setDuty(my_motor3, -0x60);
-				 }
-				 else {
-					 setDuty(my_motor3, 0x60);
-				 }
-
-
-			 default :
-				HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_RESET); //Disable Motor Relay
-		  }
-		  HAL_Delay(50);
-
-	  }*/
 
     /* USER CODE END WHILE */
 

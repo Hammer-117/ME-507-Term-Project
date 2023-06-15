@@ -1,9 +1,9 @@
-/*
- * BNO055.h
- *
- *  Created on: May 28, 2023
- *      Author: seanw
- */
+/*!
+ @file 		BNO055.h
+ @brief		This is a header file for BNO055.c, the IMU driver.
+ @author	Sean Wahl
+ @date		June 14, 2023
+*/
 
 #ifndef INC_BNO055_H_
 #define INC_BNO055_H_
@@ -11,16 +11,20 @@
 #include "stm32f4xx_hal.h"
 #include <stdio.h>
 
+/*! @struct BNO055Type
+ 	@brief 	This structure contains the pertinent information for using and reading data
+			from a BNO055 IMU.
+ */
 typedef struct BNO055Type {
-		I2C_HandleTypeDef*  hi2c;
-		uint8_t				opr_mode;
-		uint8_t				mag_stat;
-		uint8_t				acc_stat;
-		uint8_t				gyr_stat;
-		uint8_t				sys_stat;
-		int16_t				eul_heading;
-		int16_t				eul_roll;
-		int16_t				eul_pitch;
+		I2C_HandleTypeDef*  hi2c;			/*!< The I2C handle connected to the IMU */
+		uint8_t				opr_mode;		/*!< The current operating mode of the IMU */
+		uint8_t				mag_stat;		/*!< Magnetometer status */
+		uint8_t				acc_stat; 		/*!< Accelerometer status */
+		uint8_t				gyr_stat;		/*!< Gyroscope status */
+		uint8_t				sys_stat; 		/*!< System status */
+		int16_t				eul_heading; 	/*!< Euler heading */
+		int16_t				eul_roll;		/*!< Euler roll */
+		int16_t				eul_pitch;		/*!< Euler pitch */
 	} BNO055_t;
 
 // Device address

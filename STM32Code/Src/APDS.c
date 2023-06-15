@@ -26,7 +26,7 @@ APDS_t APDS9960_Init(I2C_HandleTypeDef* hi2c, uint8_t int_time, uint8_t gain) {
     pkg[0] = int_time;
     HAL_I2C_Mem_Write(myAPDS.hi2c, APDS9960_ADDR, APDS9960_ATIME, 1, pkg, 1, HAL_MAX_DELAY);
 
-    /* Set gain value, only accepts 0 to 3 */
+    /* Set gain value */
     if (gain > x64) { gain = x64;}
 
     if (gain == x1) {myAPDS.GAIN = 1;}
@@ -45,7 +45,7 @@ APDS_t APDS9960_Init(I2C_HandleTypeDef* hi2c, uint8_t int_time, uint8_t gain) {
 }
 
 /*!
- @brief APDS9960 Main color reading function
+ @brief APDS9960 Main color reading function.
  This function accesses the APDS's memory registers to extract the red, green, and blue color values of what 
  is in front of it.
  @param 	myAPDS: 	APDS9960 struct type
@@ -66,7 +66,7 @@ APDS_t APDS9960_ReadColorData(APDS_t myAPDS) {
 }
 
 /*!
- @brief APDS9960 Data adjustment function
+ @brief APDS9960 Data adjustment function.
  This function takes the APDS's current color values and adjusts them to the standard scale (0xFF maximum).
  A byproduct of this normalization is that the highest color value present becomes 0xFF. This makes it impossible
  to read dark colors but works well for bright colors.
@@ -91,7 +91,7 @@ APDS_t APDS9960_AdjustData(APDS_t myAPDS) {
 }
 
 /*!
- @brief APDS9960 Color detection function
+ @brief APDS9960 Color detection function.
  This function utilizes the ReadColorData() and AdjustData() functions in order to determine what color it is looking
  at. These colors are limited to red, green, blue, and yellow. These colors have been assigned values 0-3, respectively.
  If it cannot determine if it's looking at a color it will return 4.
@@ -111,7 +111,7 @@ uint32_t APDS9960_Color(APDS_t myAPDS) {
 }
 
 /*!
- @brief APDS9960 Proximity detection function
+ @brief APDS9960 Proximity detection function.
  This function accesses the APDS's proximity register and returns the value. Note: the proximity data ranges from 0x00 to 0xFF,
  with 0xFF being the shortest distance.
  @param 	myAPDS: 	APDS9960 struct type
