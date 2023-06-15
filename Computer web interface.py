@@ -8,6 +8,14 @@ import time
 # 360 CPR, 1:34 gear ratio = 12240 ticks per wheel rotation
 # 4.5in wheels
 
+"""!
+@file Computer_web_interface.py
+@brief This file contains the code for the computer web interface.
+
+This code runs through the steps using pre-captured data from the get_info function. It uses COM5 to communicate
+with the Arduino to send data.
+"""
+
 def wheel_calcs():
     cpr = 360
     gear_ratio = 34 #1:34
