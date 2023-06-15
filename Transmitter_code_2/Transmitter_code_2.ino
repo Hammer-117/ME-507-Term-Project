@@ -3,6 +3,15 @@
 #include <nRF24L01.h>
 #include <printf.h>
 
+/*!
+ @file 		Transmitter_code.ino
+ @author	Ryan Johnson
+ @date		June 14, 2023
+ @brief Arduino code to transmit data over NRF24L01+
+ This function configures an arduino to receive data from UART and a "deadman" switch or a joystick and transmit that data over NRF24L01+
+ 
+*/
+
 RF24 radio(7, 8); //CE, CSN
 
 const byte address[5] = {0x30, 0x30, 0x30, 0x30, 0x31};

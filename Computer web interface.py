@@ -11,12 +11,21 @@ import time
 """!
 @file Computer_web_interface.py
 @brief This file contains the code for the computer web interface.
+@author Ryan Johnson
+@date June 14, 2023
 
 This code runs through the steps using pre-captured data from the get_info function. It uses COM5 to communicate
 with the Arduino to send data.
 """
 
 def wheel_calcs():
+
+    """!
+    @brief Calculates encoder ticks necessary to move a certain distance
+    This function does a bit of math to return the conversion factors necessary to calculate encoder ticks
+    @retval in_per_tick inches traveled per encoder tick
+    @retval deg_per_tick degrees turned per encoder tick
+    """
     cpr = 360
     gear_ratio = 34 #1:34
     wheel_diameter = 4.5 #in
@@ -37,6 +46,12 @@ def wheel_calcs():
     return in_per_tick, deg_per_tick
 
 def get_info():
+    """!
+    @brief Gets information from the "eye in the sky"
+    This function does a bit of math to return the conversion factors necessary to calculate encoder ticks
+    @retval balls python list of all of the balls
+    @retval robots python list of all of the robots
+    """
     response = requests.get('http://10.144.129.5:5001/info')
     data = response.json()
 
@@ -46,11 +61,19 @@ def get_info():
     return balls, robots
 
 def main():
+    """!
+    @brief prints out the information from get_info()
+    """
     balls, robots = get_info()
     print('Balls:', balls)
     print('Robots:', robots)
 
 def testing():
+    """!
+    @brief Uses a sample set of data and finds robot location, ball locations, and computes the necessary distance and turn angle to reach the closest ball
+    @retval mindist distance to the closest ball
+    @retval dirdiff degrees to turn to face the closest ball
+    """
     
     rescale = 1.5 #pixels/in
 
@@ -96,6 +119,17 @@ def testing():
 
 def encoder_encoding(in_per_tick, deg_per_tick, turn_angle, distance):
 
+    """!
+    @brief Calculates encoder ticks necessary to turn and move a certain distance and returns that in bytes form
+    This function does a bit of math to return the conversion factors necessary to calculate encoder ticks
+    @param in_per_tick inches traveled in a single encoder tick
+    @param deg_per_tick degrees turned per encoder tick
+    @param turn_angle degrees to turn
+    @param distance distance to travel
+    @retval turn bytes bytes form of encoder ticks to turn
+    @retval dist_bytes bytes form of encoder ticks to go straight
+    """
+
     tickdist = distance/in_per_tick
     tickdist = int(math.ceil(tickdist))
 
@@ -108,6 +142,12 @@ def encoder_encoding(in_per_tick, deg_per_tick, turn_angle, distance):
     return turn_bytes, dist_bytes
 
 def sendticks(turn_ticks, straight_ticks):
+    """!
+    @brief Sends tick data over COM4 at a baudrate of 115200. Also fails due to time to set up serial connection
+    This function is no longer used and has been replaced by sendinch
+    @param turn_ticks ticks byte object to turn
+    @param straight_ticks ticks byte object to travel straight
+    """
 
     with Serial("COM4",115200, timeout=1) as ser:
         ser.write(turn_ticks)
@@ -115,6 +155,13 @@ def sendticks(turn_ticks, straight_ticks):
         ser.write(straight_ticks)
 
 def sendinch(serobj, turn_deg, straight_in):
+    """!
+    @brief Sends bytes of the degrees to turn and inches to travel expressed in ascii hex
+    For better resolution, this function sends 4 times the value, or in other words, it sends quarter inches.
+    @param serobj A serial object that has had sufficient time to start
+    @param turn_deg Degrees to turn
+    @param straight_in Inches to travel straight
+    """
     quarter = math.ceil(straight_in*4)
     turn_deg = math.ceil(turn_deg)
 

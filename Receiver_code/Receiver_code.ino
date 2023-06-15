@@ -15,6 +15,15 @@ int i = 0;
 
 char transmissionbuf[13] = "0000m0000m000";
 
+/*!
+ @file 		Receiver_code.ino
+ @author	Ryan Johnson
+ @date		June 14, 2023
+ @brief Arduino code to receive data and transmit it over I2C
+ This function configures an arduino to receive data from an NRF24L01+ and transmit that data over I2C
+ 
+*/
+
 void sendData() {
   /*for (i=0; i < 13; i++){
     Wire.write(transmissionbuf[i]);  // Send the character buffer when requested
