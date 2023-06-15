@@ -1,0 +1,44 @@
+/*!
+@mainpage 
+
+@section intro_sec Introduction
+This is the main documentation page for my project. It provides an overview
+of the project and its components.
+
+@section features_sec Mechanical Design
+The robot, shown below, incorporates a large variety of sensors, two drive wheels, and a pair of collector wheels. 
+The two collector wheels are driven by a single motor and the are connected with gears at the top of the robot. These
+wheels are 3D printed out of TPU, and since they were more slippery than we intended, we used rubber bands to 
+increase friction with the ping pong balls. The collector wheels drive the balls into a vertical storage tube.
+
+@image html 20230614_190326887_iOS.jpg width=504px height=378px
+
+All of the blue parts are 3D printed out of PLA and the base plate is made out of laser-cut acrylic. All of the parts that
+interact directly with the motor shaft were designed to be a press-fit, which caused a few problems with the drive wheels.
+The motor shaft was quite short and the motor mounts needed to be thick to support the load of the robot, leaving a very
+small amount of motor shaft for the press fit on the wheel. This led to the wheels falling off quite often. In the future,
+I plan to use a better style of hub when interacting with the motor shaft. 
+
+The gears were attached to the shafts with a "set screw" that went through the whole shaft more like a pin. This held 
+them very securely and eliminated most problems with screwing into a 3D printed part.
+
+The battery case used a 3D printed bottom half with a laser cut acrylic top cover. The cover attaches to the bottom with
+a screw on one side and a tab and slot design on the other for easier assembly and disassembly.
+
+@image html 20230614_190318525_iOS.jpg width=504px height=378px
+
+@section sensors_sec Electrical Design
+The storage tube has an integrated color sensor to confirm that we have the correct color ball. Because this color sensor
+requires a large amount of light, we also included a very bright LED to light up the ball and get a more accurate reading. 
+
+We also have line sensors mounted to the front of the robot. This was going to be for navigation before we planned on using
+the "eye in the sky", but we decided to keep them as a redundant check of the camera system. 
+
+Another sensor we used is an IMU to get a sense of the direction of the robot. For a better sense of the location of the
+robot, each of the motors have encoders.
+
+As mentioned earlier, another sensor that we use is the "eye in the sky" that Nathan's team developed. To interact with
+this system, we wrote a bit of python code that would pull the data and send it to the robot, using an pair of arduinos
+as intermediaries.
+
+*/
