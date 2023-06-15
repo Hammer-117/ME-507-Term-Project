@@ -1,0 +1,99 @@
+\hypertarget{encoder_8c}{}\doxysection{Src/encoder.c File Reference}
+\label{encoder_8c}\index{Src/encoder.c@{Src/encoder.c}}
+
+
+This file provides the ability to interface with an encoder. Note\+: timer channels 1 and 2 must be used to be able to utilize STM32 Cube\+IDE\textquotesingle{}s Encoder Mode.  
+
+
+{\ttfamily \#include \char`\"{}encoder.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_encoder_type}{encoder\+\_\+t}} \mbox{\hyperlink{encoder_8c_a23b4053bbf5b3f3aa1e77af81e7015b5}{encoder\+\_\+\+Init}} (TIM\+\_\+\+Handle\+Type\+Def $\ast$htim, uint32\+\_\+t ARR, uint32\+\_\+t CPR, uint32\+\_\+t GR)
+\begin{DoxyCompactList}\small\item\em Encoder initialization function. This function configures a struct to contain all necessary information for using an encoder, including the encoder\textquotesingle{}s timer number, the auto reload value, and more. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_encoder_type}{encoder\+\_\+t}} \mbox{\hyperlink{encoder_8c_add8d1b71096edaa3bec01829366eb332}{encoder\+\_\+\+Update}} (\mbox{\hyperlink{struct_encoder_type}{encoder\+\_\+t}} my\+Enc)
+\begin{DoxyCompactList}\small\item\em Encoder update and reading function. This function updates the encoder\textquotesingle{}s count based on the change in the timer\textquotesingle{}s value, accounting for over and under flow. This value is also available in radian format. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_encoder_type}{encoder\+\_\+t}} \mbox{\hyperlink{encoder_8c_a5ef7719298fd204d27b8370c47706124}{encoder\+\_\+\+Zero}} (\mbox{\hyperlink{struct_encoder_type}{encoder\+\_\+t}} my\+Enc)
+\begin{DoxyCompactList}\small\item\em Encoder zeroing function This function resets the encoder\textquotesingle{}s count to zero. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides the ability to interface with an encoder. Note\+: timer channels 1 and 2 must be used to be able to utilize STM32 Cube\+IDE\textquotesingle{}s Encoder Mode. 
+
+\begin{DoxyAuthor}{Author}
+Sean Wahl 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 14, 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{encoder_8c_a23b4053bbf5b3f3aa1e77af81e7015b5}\label{encoder_8c_a23b4053bbf5b3f3aa1e77af81e7015b5}} 
+\index{encoder.c@{encoder.c}!encoder\_Init@{encoder\_Init}}
+\index{encoder\_Init@{encoder\_Init}!encoder.c@{encoder.c}}
+\doxysubsubsection{\texorpdfstring{encoder\_Init()}{encoder\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_encoder_type}{encoder\+\_\+t}} encoder\+\_\+\+Init (\begin{DoxyParamCaption}\item[{TIM\+\_\+\+Handle\+Type\+Def $\ast$}]{htim,  }\item[{uint32\+\_\+t}]{ARR,  }\item[{uint32\+\_\+t}]{CPR,  }\item[{uint32\+\_\+t}]{GR }\end{DoxyParamCaption})}
+
+
+
+Encoder initialization function. This function configures a struct to contain all necessary information for using an encoder, including the encoder\textquotesingle{}s timer number, the auto reload value, and more. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em htim} & Timer handle pointer \\
+\hline
+{\em ARR} & Auto reload value of the timer \\
+\hline
+{\em CPR} & Counts per revolution of the encoder \\
+\hline
+{\em GR} & Gear ratio attached to the output of the encoder\textquotesingle{}s motor \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & an encoder struct for future command use. ~\newline
+ \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{encoder_8c_add8d1b71096edaa3bec01829366eb332}\label{encoder_8c_add8d1b71096edaa3bec01829366eb332}} 
+\index{encoder.c@{encoder.c}!encoder\_Update@{encoder\_Update}}
+\index{encoder\_Update@{encoder\_Update}!encoder.c@{encoder.c}}
+\doxysubsubsection{\texorpdfstring{encoder\_Update()}{encoder\_Update()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_encoder_type}{encoder\+\_\+t}} encoder\+\_\+\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_encoder_type}{encoder\+\_\+t}}}]{my\+Enc }\end{DoxyParamCaption})}
+
+
+
+Encoder update and reading function. This function updates the encoder\textquotesingle{}s count based on the change in the timer\textquotesingle{}s value, accounting for over and under flow. This value is also available in radian format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+Enc} & Encoder struct type \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Encoder} & struct for future use \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{encoder_8c_a5ef7719298fd204d27b8370c47706124}\label{encoder_8c_a5ef7719298fd204d27b8370c47706124}} 
+\index{encoder.c@{encoder.c}!encoder\_Zero@{encoder\_Zero}}
+\index{encoder\_Zero@{encoder\_Zero}!encoder.c@{encoder.c}}
+\doxysubsubsection{\texorpdfstring{encoder\_Zero()}{encoder\_Zero()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_encoder_type}{encoder\+\_\+t}} encoder\+\_\+\+Zero (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_encoder_type}{encoder\+\_\+t}}}]{my\+Enc }\end{DoxyParamCaption})}
+
+
+
+Encoder zeroing function This function resets the encoder\textquotesingle{}s count to zero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+Enc} & Encoder struct type \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Encoder} & struct for future use \\
+\hline
+\end{DoxyRetVals}

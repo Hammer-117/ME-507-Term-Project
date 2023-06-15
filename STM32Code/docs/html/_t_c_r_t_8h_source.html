@@ -78,39 +78,43 @@ $(function() {
   <div class="headertitle"><div class="title">TCRT.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * TCRT.h</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *  Created on: May 28, 2023</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *      Author: seanw</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<a href="_t_c_r_t_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef INC_TCRT_H_</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define INC_TCRT_H_</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;stm32f4xx_hal.h&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_t_c_r_t_type.html">   13</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_t_c_r_t_type.html">TCRTType</a> {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        ADC_HandleTypeDef*  hadc;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        uint32_t            channel;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        GPIO_TypeDef*       Dig_Port;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        uint16_t            Dig_Pin;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        uint16_t            Analog;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        uint16_t            Digital;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    } <a class="code hl_struct" href="struct_t_c_r_t_type.html">TCRT_t</a>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keywordtype">void</span> TCRT_Error(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_t_c_r_t_type.html">   17</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_t_c_r_t_type.html">TCRTType</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_t_c_r_t_type.html#a3b8ea0d4a8b27d350f273a50a16fc9cb">   18</a></span>        ADC_HandleTypeDef*  <a class="code hl_variable" href="struct_t_c_r_t_type.html#a3b8ea0d4a8b27d350f273a50a16fc9cb">hadc</a>;       </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct_t_c_r_t_type.html#a70530c55388ec8cd3d9a7bfbdde0f754">   19</a></span>        uint32_t            <a class="code hl_variable" href="struct_t_c_r_t_type.html#a70530c55388ec8cd3d9a7bfbdde0f754">channel</a>;    </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct_t_c_r_t_type.html#a46ce620f4db2ab80a52ea1de2d5a868d">   20</a></span>        GPIO_TypeDef*       <a class="code hl_variable" href="struct_t_c_r_t_type.html#a46ce620f4db2ab80a52ea1de2d5a868d">Dig_Port</a>;   </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="struct_t_c_r_t_type.html#a8b34dd395a687dd9f4f6f6cdfd7a3440">   21</a></span>        uint16_t            <a class="code hl_variable" href="struct_t_c_r_t_type.html#a8b34dd395a687dd9f4f6f6cdfd7a3440">Dig_Pin</a>;    </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_t_c_r_t_type.html#a729f1164306057753d0ac1a247113e69">   22</a></span>        uint16_t            <a class="code hl_variable" href="struct_t_c_r_t_type.html#a729f1164306057753d0ac1a247113e69">Analog</a>;     </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_t_c_r_t_type.html#a4880695d16e34e8cf0785c5a2dcbbec9">   23</a></span>        uint16_t            <a class="code hl_variable" href="struct_t_c_r_t_type.html#a4880695d16e34e8cf0785c5a2dcbbec9">Digital</a>;    </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    } <a class="code hl_struct" href="struct_t_c_r_t_type.html">TCRT_t</a>;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><a class="code hl_struct" href="struct_t_c_r_t_type.html">TCRT_t</a> TCRT_Init(ADC_HandleTypeDef* hadc, uint32_t channel, GPIO_TypeDef* Dig_Port, uint16_t Dig_Pin);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><a class="code hl_struct" href="struct_t_c_r_t_type.html">TCRT_t</a> TCRT_ReadAll(<a class="code hl_struct" href="struct_t_c_r_t_type.html">TCRT_t</a> myTCRT);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><a class="code hl_struct" href="struct_t_c_r_t_type.html">TCRT_t</a> TCRT_ReadAnalog(<a class="code hl_struct" href="struct_t_c_r_t_type.html">TCRT_t</a> myTCRT);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><a class="code hl_struct" href="struct_t_c_r_t_type.html">TCRT_t</a> TCRT_ReadDigital(<a class="code hl_struct" href="struct_t_c_r_t_type.html">TCRT_t</a> myTCRT);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#endif </span><span class="comment">/* INC_TCRT_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="astruct_t_c_r_t_type_html"><div class="ttname"><a href="struct_t_c_r_t_type.html">TCRTType</a></div><div class="ttdef"><b>Definition:</b> TCRT.h:13</div></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keywordtype">void</span> TCRT_Error(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><a class="code hl_struct" href="struct_t_c_r_t_type.html">TCRT_t</a> <a class="code hl_function" href="_t_c_r_t_8h.html#a3c60432b0e85f09b802aafbf76320dc8">TCRT_Init</a>(ADC_HandleTypeDef* hadc, uint32_t channel, GPIO_TypeDef* Dig_Port, uint16_t Dig_Pin);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><a class="code hl_struct" href="struct_t_c_r_t_type.html">TCRT_t</a> <a class="code hl_function" href="_t_c_r_t_8h.html#ae2df2987f1a663c3f55f68df9a4784f9">TCRT_ReadAll</a>(<a class="code hl_struct" href="struct_t_c_r_t_type.html">TCRT_t</a> myTCRT);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><a class="code hl_struct" href="struct_t_c_r_t_type.html">TCRT_t</a> <a class="code hl_function" href="_t_c_r_t_8h.html#a4b4f0e378be8928dc24aef4508952d48">TCRT_ReadAnalog</a>(<a class="code hl_struct" href="struct_t_c_r_t_type.html">TCRT_t</a> myTCRT);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><a class="code hl_struct" href="struct_t_c_r_t_type.html">TCRT_t</a> <a class="code hl_function" href="_t_c_r_t_8h.html#a526b5aaaca44a8a72ad573f5e61a6dd6">TCRT_ReadDigital</a>(<a class="code hl_struct" href="struct_t_c_r_t_type.html">TCRT_t</a> myTCRT);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#endif </span><span class="comment">/* INC_TCRT_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a_t_c_r_t_8h_html_a3c60432b0e85f09b802aafbf76320dc8"><div class="ttname"><a href="_t_c_r_t_8h.html#a3c60432b0e85f09b802aafbf76320dc8">TCRT_Init</a></div><div class="ttdeci">TCRT_t TCRT_Init(ADC_HandleTypeDef *hadc, uint32_t channel, GPIO_TypeDef *Dig_Port, uint16_t Dig_Pin)</div><div class="ttdoc">TCRT Object initialization function. This function configures an TCRT struct to include all pertinent...</div><div class="ttdef"><b>Definition:</b> TCRT.c:26</div></div>
+<div class="ttc" id="a_t_c_r_t_8h_html_a4b4f0e378be8928dc24aef4508952d48"><div class="ttname"><a href="_t_c_r_t_8h.html#a4b4f0e378be8928dc24aef4508952d48">TCRT_ReadAnalog</a></div><div class="ttdeci">TCRT_t TCRT_ReadAnalog(TCRT_t myTCRT)</div><div class="ttdoc">TCRT Analog read function. This function reads only the analog reading from the TCRT and puts it in t...</div><div class="ttdef"><b>Definition:</b> TCRT.c:56</div></div>
+<div class="ttc" id="a_t_c_r_t_8h_html_a526b5aaaca44a8a72ad573f5e61a6dd6"><div class="ttname"><a href="_t_c_r_t_8h.html#a526b5aaaca44a8a72ad573f5e61a6dd6">TCRT_ReadDigital</a></div><div class="ttdeci">TCRT_t TCRT_ReadDigital(TCRT_t myTCRT)</div><div class="ttdoc">TCRT Digital read function This function reads only the digital reading from the TCRT and puts it in ...</div><div class="ttdef"><b>Definition:</b> TCRT.c:95</div></div>
+<div class="ttc" id="a_t_c_r_t_8h_html_ae2df2987f1a663c3f55f68df9a4784f9"><div class="ttname"><a href="_t_c_r_t_8h.html#ae2df2987f1a663c3f55f68df9a4784f9">TCRT_ReadAll</a></div><div class="ttdeci">TCRT_t TCRT_ReadAll(TCRT_t myTCRT)</div><div class="ttdoc">TCRT Full read function. This function reads both the digital and analog reading from the TCRT and pu...</div><div class="ttdef"><b>Definition:</b> TCRT.c:43</div></div>
+<div class="ttc" id="astruct_t_c_r_t_type_html"><div class="ttname"><a href="struct_t_c_r_t_type.html">TCRTType</a></div><div class="ttdoc">This structure contains the pertinent information for using and reading data from a TCRT sensor and s...</div><div class="ttdef"><b>Definition:</b> TCRT.h:17</div></div>
+<div class="ttc" id="astruct_t_c_r_t_type_html_a3b8ea0d4a8b27d350f273a50a16fc9cb"><div class="ttname"><a href="struct_t_c_r_t_type.html#a3b8ea0d4a8b27d350f273a50a16fc9cb">TCRTType::hadc</a></div><div class="ttdeci">ADC_HandleTypeDef * hadc</div><div class="ttdef"><b>Definition:</b> TCRT.h:18</div></div>
+<div class="ttc" id="astruct_t_c_r_t_type_html_a46ce620f4db2ab80a52ea1de2d5a868d"><div class="ttname"><a href="struct_t_c_r_t_type.html#a46ce620f4db2ab80a52ea1de2d5a868d">TCRTType::Dig_Port</a></div><div class="ttdeci">GPIO_TypeDef * Dig_Port</div><div class="ttdef"><b>Definition:</b> TCRT.h:20</div></div>
+<div class="ttc" id="astruct_t_c_r_t_type_html_a4880695d16e34e8cf0785c5a2dcbbec9"><div class="ttname"><a href="struct_t_c_r_t_type.html#a4880695d16e34e8cf0785c5a2dcbbec9">TCRTType::Digital</a></div><div class="ttdeci">uint16_t Digital</div><div class="ttdef"><b>Definition:</b> TCRT.h:23</div></div>
+<div class="ttc" id="astruct_t_c_r_t_type_html_a70530c55388ec8cd3d9a7bfbdde0f754"><div class="ttname"><a href="struct_t_c_r_t_type.html#a70530c55388ec8cd3d9a7bfbdde0f754">TCRTType::channel</a></div><div class="ttdeci">uint32_t channel</div><div class="ttdef"><b>Definition:</b> TCRT.h:19</div></div>
+<div class="ttc" id="astruct_t_c_r_t_type_html_a729f1164306057753d0ac1a247113e69"><div class="ttname"><a href="struct_t_c_r_t_type.html#a729f1164306057753d0ac1a247113e69">TCRTType::Analog</a></div><div class="ttdeci">uint16_t Analog</div><div class="ttdef"><b>Definition:</b> TCRT.h:22</div></div>
+<div class="ttc" id="astruct_t_c_r_t_type_html_a8b34dd395a687dd9f4f6f6cdfd7a3440"><div class="ttname"><a href="struct_t_c_r_t_type.html#a8b34dd395a687dd9f4f6f6cdfd7a3440">TCRTType::Dig_Pin</a></div><div class="ttdeci">uint16_t Dig_Pin</div><div class="ttdef"><b>Definition:</b> TCRT.h:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -171,16 +171,16 @@ Functions</h2></td></tr>
 <tr class="memdesc:a11fa06833127f55ec0e1a816c6caac6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">APDS9960 Object initialization function. This function configures an APDS struct to include all pertinent information for gathering data from the sensor such as the ADC integration time and the sensor output's gain value.  <br /></td></tr>
 <tr class="separator:a11fa06833127f55ec0e1a816c6caac6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d98181e79a290723883b44fc2586ada"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_p_d_s_type.html">APDS_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_p_d_s_8h.html#a9d98181e79a290723883b44fc2586ada">APDS9960_ReadColorData</a> (<a class="el" href="struct_a_p_d_s_type.html">APDS_t</a> my_APDS)</td></tr>
-<tr class="memdesc:a9d98181e79a290723883b44fc2586ada"><td class="mdescLeft">&#160;</td><td class="mdescRight">APDS9960 Main color reading function This function accesses the APDS's memory registers to extract the red, green, and blue color values of what is in front of it.  <br /></td></tr>
+<tr class="memdesc:a9d98181e79a290723883b44fc2586ada"><td class="mdescLeft">&#160;</td><td class="mdescRight">APDS9960 Main color reading function. This function accesses the APDS's memory registers to extract the red, green, and blue color values of what is in front of it.  <br /></td></tr>
 <tr class="separator:a9d98181e79a290723883b44fc2586ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c656f441e7d4a65df7934fb13e7ce22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_a_p_d_s_type.html">APDS_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_p_d_s_8h.html#a7c656f441e7d4a65df7934fb13e7ce22">APDS9960_AdjustData</a> (<a class="el" href="struct_a_p_d_s_type.html">APDS_t</a> myAPDS)</td></tr>
-<tr class="memdesc:a7c656f441e7d4a65df7934fb13e7ce22"><td class="mdescLeft">&#160;</td><td class="mdescRight">APDS9960 Data adjustment function This function takes the APDS's current color values and adjusts them to the standard scale (0xFF maximum). A byproduct of this normalization is that the highest color value present becomes 0xFF. This makes it impossible to read dark colors but works well for bright colors.  <br /></td></tr>
+<tr class="memdesc:a7c656f441e7d4a65df7934fb13e7ce22"><td class="mdescLeft">&#160;</td><td class="mdescRight">APDS9960 Data adjustment function. This function takes the APDS's current color values and adjusts them to the standard scale (0xFF maximum). A byproduct of this normalization is that the highest color value present becomes 0xFF. This makes it impossible to read dark colors but works well for bright colors.  <br /></td></tr>
 <tr class="separator:a7c656f441e7d4a65df7934fb13e7ce22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a583044343212ddc9f42e0c6a23f735b3"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_p_d_s_8h.html#a583044343212ddc9f42e0c6a23f735b3">APDS9960_Color</a> (<a class="el" href="struct_a_p_d_s_type.html">APDS_t</a> myAPDS)</td></tr>
-<tr class="memdesc:a583044343212ddc9f42e0c6a23f735b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">APDS9960 Color detection function This function utilizes the ReadColorData() and AdjustData() functions in order to determine what color it is looking at. These colors are limited to red, green, blue, and yellow. These colors have been assigned values 0-3, respectively. If it cannot determine if it's looking at a color it will return 4.  <br /></td></tr>
+<tr class="memdesc:a583044343212ddc9f42e0c6a23f735b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">APDS9960 Color detection function. This function utilizes the ReadColorData() and AdjustData() functions in order to determine what color it is looking at. These colors are limited to red, green, blue, and yellow. These colors have been assigned values 0-3, respectively. If it cannot determine if it's looking at a color it will return 4.  <br /></td></tr>
 <tr class="separator:a583044343212ddc9f42e0c6a23f735b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dd074f033805ac028977c2adcc6e4a9"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_a_p_d_s_8h.html#a2dd074f033805ac028977c2adcc6e4a9">APDS9960_Prox</a> (<a class="el" href="struct_a_p_d_s_type.html">APDS_t</a> myAPDS)</td></tr>
-<tr class="memdesc:a2dd074f033805ac028977c2adcc6e4a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">APDS9960 Proximity detection function This function accesses the APDS's proximity register and returns the value. Note: the proximity data ranges from 0x00 to 0xFF, with 0xFF being the shortest distance.  <br /></td></tr>
+<tr class="memdesc:a2dd074f033805ac028977c2adcc6e4a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">APDS9960 Proximity detection function. This function accesses the APDS's proximity register and returns the value. Note: the proximity data ranges from 0x00 to 0xFF, with 0xFF being the shortest distance.  <br /></td></tr>
 <tr class="separator:a2dd074f033805ac028977c2adcc6e4a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -204,7 +204,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>APDS9960 Data adjustment function This function takes the APDS's current color values and adjusts them to the standard scale (0xFF maximum). A byproduct of this normalization is that the highest color value present becomes 0xFF. This makes it impossible to read dark colors but works well for bright colors. </p>
+<p>APDS9960 Data adjustment function. This function takes the APDS's current color values and adjusts them to the standard scale (0xFF maximum). A byproduct of this normalization is that the highest color value present becomes 0xFF. This makes it impossible to read dark colors but works well for bright colors. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">myAPDS</td><td>APDS9960 struct type </td></tr>
@@ -236,7 +236,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>APDS9960 Color detection function This function utilizes the ReadColorData() and AdjustData() functions in order to determine what color it is looking at. These colors are limited to red, green, blue, and yellow. These colors have been assigned values 0-3, respectively. If it cannot determine if it's looking at a color it will return 4. </p>
+<p>APDS9960 Color detection function. This function utilizes the ReadColorData() and AdjustData() functions in order to determine what color it is looking at. These colors are limited to red, green, blue, and yellow. These colors have been assigned values 0-3, respectively. If it cannot determine if it's looking at a color it will return 4. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">myAPDS</td><td>APDS9960 struct type </td></tr>
@@ -319,7 +319,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>APDS9960 Proximity detection function This function accesses the APDS's proximity register and returns the value. Note: the proximity data ranges from 0x00 to 0xFF, with 0xFF being the shortest distance. </p>
+<p>APDS9960 Proximity detection function. This function accesses the APDS's proximity register and returns the value. Note: the proximity data ranges from 0x00 to 0xFF, with 0xFF being the shortest distance. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">myAPDS</td><td>APDS9960 struct type </td></tr>
@@ -351,7 +351,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>APDS9960 Main color reading function This function accesses the APDS's memory registers to extract the red, green, and blue color values of what is in front of it. </p>
+<p>APDS9960 Main color reading function. This function accesses the APDS's memory registers to extract the red, green, and blue color values of what is in front of it. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">myAPDS</td><td>APDS9960 struct type </td></tr>

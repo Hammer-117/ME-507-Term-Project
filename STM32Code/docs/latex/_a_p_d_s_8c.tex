@@ -13,13 +13,13 @@ This file provides the functionality to use an APDS9960 sensor for its color and
 \mbox{\hyperlink{struct_a_p_d_s_type}{APDS\+\_\+t}} \mbox{\hyperlink{_a_p_d_s_8c_a11fa06833127f55ec0e1a816c6caac6e}{APDS9960\+\_\+\+Init}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c, uint8\+\_\+t int\+\_\+time, uint8\+\_\+t gain)
 \begin{DoxyCompactList}\small\item\em APDS9960 Object initialization function. This function configures an APDS struct to include all pertinent information for gathering data from the sensor such as the ADC integration time and the sensor output\textquotesingle{}s gain value. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_a_p_d_s_type}{APDS\+\_\+t}} \mbox{\hyperlink{_a_p_d_s_8c_aea9c3e17396e0bccbec24032fc3b77b7}{APDS9960\+\_\+\+Read\+Color\+Data}} (\mbox{\hyperlink{struct_a_p_d_s_type}{APDS\+\_\+t}} my\+APDS)
-\begin{DoxyCompactList}\small\item\em APDS9960 Main color reading function This function accesses the APDS\textquotesingle{}s memory registers to extract the red, green, and blue color values of what is in front of it. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em APDS9960 Main color reading function. This function accesses the APDS\textquotesingle{}s memory registers to extract the red, green, and blue color values of what is in front of it. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_a_p_d_s_type}{APDS\+\_\+t}} \mbox{\hyperlink{_a_p_d_s_8c_a7c656f441e7d4a65df7934fb13e7ce22}{APDS9960\+\_\+\+Adjust\+Data}} (\mbox{\hyperlink{struct_a_p_d_s_type}{APDS\+\_\+t}} my\+APDS)
-\begin{DoxyCompactList}\small\item\em APDS9960 Data adjustment function This function takes the APDS\textquotesingle{}s current color values and adjusts them to the standard scale (0x\+FF maximum). A byproduct of this normalization is that the highest color value present becomes 0x\+FF. This makes it impossible to read dark colors but works well for bright colors. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em APDS9960 Data adjustment function. This function takes the APDS\textquotesingle{}s current color values and adjusts them to the standard scale (0x\+FF maximum). A byproduct of this normalization is that the highest color value present becomes 0x\+FF. This makes it impossible to read dark colors but works well for bright colors. \end{DoxyCompactList}\item 
 uint32\+\_\+t \mbox{\hyperlink{_a_p_d_s_8c_a583044343212ddc9f42e0c6a23f735b3}{APDS9960\+\_\+\+Color}} (\mbox{\hyperlink{struct_a_p_d_s_type}{APDS\+\_\+t}} my\+APDS)
-\begin{DoxyCompactList}\small\item\em APDS9960 Color detection function This function utilizes the Read\+Color\+Data() and Adjust\+Data() functions in order to determine what color it is looking at. These colors are limited to red, green, blue, and yellow. These colors have been assigned values 0-\/3, respectively. If it cannot determine if it\textquotesingle{}s looking at a color it will return 4. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em APDS9960 Color detection function. This function utilizes the Read\+Color\+Data() and Adjust\+Data() functions in order to determine what color it is looking at. These colors are limited to red, green, blue, and yellow. These colors have been assigned values 0-\/3, respectively. If it cannot determine if it\textquotesingle{}s looking at a color it will return 4. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{_a_p_d_s_8c_a2dd074f033805ac028977c2adcc6e4a9}{APDS9960\+\_\+\+Prox}} (\mbox{\hyperlink{struct_a_p_d_s_type}{APDS\+\_\+t}} my\+APDS)
-\begin{DoxyCompactList}\small\item\em APDS9960 Proximity detection function This function accesses the APDS\textquotesingle{}s proximity register and returns the value. Note\+: the proximity data ranges from 0x00 to 0x\+FF, with 0x\+FF being the shortest distance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em APDS9960 Proximity detection function. This function accesses the APDS\textquotesingle{}s proximity register and returns the value. Note\+: the proximity data ranges from 0x00 to 0x\+FF, with 0x\+FF being the shortest distance. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -42,7 +42,7 @@ June 14, 2023
 
 
 
-APDS9960 Data adjustment function This function takes the APDS\textquotesingle{}s current color values and adjusts them to the standard scale (0x\+FF maximum). A byproduct of this normalization is that the highest color value present becomes 0x\+FF. This makes it impossible to read dark colors but works well for bright colors. 
+APDS9960 Data adjustment function. This function takes the APDS\textquotesingle{}s current color values and adjusts them to the standard scale (0x\+FF maximum). A byproduct of this normalization is that the highest color value present becomes 0x\+FF. This makes it impossible to read dark colors but works well for bright colors. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -62,7 +62,7 @@ APDS9960 Data adjustment function This function takes the APDS\textquotesingle{}
 
 
 
-APDS9960 Color detection function This function utilizes the Read\+Color\+Data() and Adjust\+Data() functions in order to determine what color it is looking at. These colors are limited to red, green, blue, and yellow. These colors have been assigned values 0-\/3, respectively. If it cannot determine if it\textquotesingle{}s looking at a color it will return 4. 
+APDS9960 Color detection function. This function utilizes the Read\+Color\+Data() and Adjust\+Data() functions in order to determine what color it is looking at. These colors are limited to red, green, blue, and yellow. These colors have been assigned values 0-\/3, respectively. If it cannot determine if it\textquotesingle{}s looking at a color it will return 4. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -107,7 +107,7 @@ APDS9960 Object initialization function. This function configures an APDS struct
 
 
 
-APDS9960 Proximity detection function This function accesses the APDS\textquotesingle{}s proximity register and returns the value. Note\+: the proximity data ranges from 0x00 to 0x\+FF, with 0x\+FF being the shortest distance. 
+APDS9960 Proximity detection function. This function accesses the APDS\textquotesingle{}s proximity register and returns the value. Note\+: the proximity data ranges from 0x00 to 0x\+FF, with 0x\+FF being the shortest distance. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -127,7 +127,7 @@ APDS9960 Proximity detection function This function accesses the APDS\textquotes
 
 
 
-APDS9960 Main color reading function This function accesses the APDS\textquotesingle{}s memory registers to extract the red, green, and blue color values of what is in front of it. 
+APDS9960 Main color reading function. This function accesses the APDS\textquotesingle{}s memory registers to extract the red, green, and blue color values of what is in front of it. 
 
 
 \begin{DoxyParams}{Parameters}

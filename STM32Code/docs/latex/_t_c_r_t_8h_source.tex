@@ -1,38 +1,32 @@
 \hypertarget{_t_c_r_t_8h_source}{}\doxysection{TCRT.\+h}
 \label{_t_c_r_t_8h_source}\index{Inc/TCRT.h@{Inc/TCRT.h}}
-
+\mbox{\hyperlink{_t_c_r_t_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
-\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ TCRT.h}}
-\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Created\ on:\ May\ 28,\ 2023}}
-\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ seanw}}
-\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00001\ }
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ INC\_TCRT\_H\_}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ INC\_TCRT\_H\_}}
 \DoxyCodeLine{00010\ }
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
 \DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_t_c_r_t_type}{TCRTType}}\ \{}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ ADC\_HandleTypeDef*\ \ hadc;}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ channel;}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ GPIO\_TypeDef*\ \ \ \ \ \ \ Dig\_Port;}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ uint16\_t\ \ \ \ \ \ \ \ \ \ \ \ Dig\_Pin;}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ uint16\_t\ \ \ \ \ \ \ \ \ \ \ \ Analog;}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ uint16\_t\ \ \ \ \ \ \ \ \ \ \ \ Digital;}
-\DoxyCodeLine{00020\ \ \ \ \ \}\ \mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}};}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \textcolor{keywordtype}{void}\ TCRT\_Error(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00017\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_t_c_r_t_type}{TCRTType}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ ADC\_HandleTypeDef*\ \ \mbox{\hyperlink{struct_t_c_r_t_type_a3b8ea0d4a8b27d350f273a50a16fc9cb}{hadc}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_t_c_r_t_type_a70530c55388ec8cd3d9a7bfbdde0f754}{channel}};\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ GPIO\_TypeDef*\ \ \ \ \ \ \ \mbox{\hyperlink{struct_t_c_r_t_type_a46ce620f4db2ab80a52ea1de2d5a868d}{Dig\_Port}};\ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ uint16\_t\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_t_c_r_t_type_a8b34dd395a687dd9f4f6f6cdfd7a3440}{Dig\_Pin}};\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ uint16\_t\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_t_c_r_t_type_a729f1164306057753d0ac1a247113e69}{Analog}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ uint16\_t\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_t_c_r_t_type_a4880695d16e34e8cf0785c5a2dcbbec9}{Digital}};\ }
+\DoxyCodeLine{00024\ \ \ \ \ \}\ \mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}};}
 \DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}}\ TCRT\_Init(ADC\_HandleTypeDef*\ hadc,\ uint32\_t\ channel,\ GPIO\_TypeDef*\ Dig\_Port,\ uint16\_t\ Dig\_Pin);}
-\DoxyCodeLine{00027\ \mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}}\ TCRT\_ReadAll(\mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}}\ myTCRT);}
-\DoxyCodeLine{00028\ \mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}}\ TCRT\_ReadAnalog(\mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}}\ myTCRT);}
-\DoxyCodeLine{00029\ \mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}}\ TCRT\_ReadDigital(\mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}}\ myTCRT);}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_TCRT\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ TCRT\_Error(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}}\ \mbox{\hyperlink{_t_c_r_t_8h_a3c60432b0e85f09b802aafbf76320dc8}{TCRT\_Init}}(ADC\_HandleTypeDef*\ hadc,\ uint32\_t\ channel,\ GPIO\_TypeDef*\ Dig\_Port,\ uint16\_t\ Dig\_Pin);}
+\DoxyCodeLine{00031\ \mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}}\ \mbox{\hyperlink{_t_c_r_t_8h_ae2df2987f1a663c3f55f68df9a4784f9}{TCRT\_ReadAll}}(\mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}}\ myTCRT);}
+\DoxyCodeLine{00032\ \mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}}\ \mbox{\hyperlink{_t_c_r_t_8h_a4b4f0e378be8928dc24aef4508952d48}{TCRT\_ReadAnalog}}(\mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}}\ myTCRT);}
+\DoxyCodeLine{00033\ \mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}}\ \mbox{\hyperlink{_t_c_r_t_8h_a526b5aaaca44a8a72ad573f5e61a6dd6}{TCRT\_ReadDigital}}(\mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\_t}}\ myTCRT);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_TCRT\_H\_\ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

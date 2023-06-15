@@ -78,66 +78,73 @@ $(function() {
   <div class="headertitle"><div class="title">BNO055.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * BNO055.h</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> *  Created on: May 28, 2023</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *      Author: seanw</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<a href="_b_n_o055_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef INC_BNO055_H_</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define INC_BNO055_H_</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;stm32f4xx_hal.h&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_b_n_o055_type.html">   14</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_b_n_o055_type.html">BNO055Type</a> {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        I2C_HandleTypeDef*  hi2c;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        uint8_t             opr_mode;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        uint8_t             mag_stat;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        uint8_t             acc_stat;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        uint8_t             gyr_stat;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        uint8_t             sys_stat;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        int16_t             eul_heading;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        int16_t             eul_roll;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        int16_t             eul_pitch;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    } <a class="code hl_struct" href="struct_b_n_o055_type.html">BNO055_t</a>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// Device address</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#define BNO055_ADDR 0x50</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">// Important registers</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#define BNO055_OPR_MODE          0x3D</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#define BNO055_CALIB_STAT        0x35</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#define BNO055_ACC_OFFSET_X_LSB  0x55</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#define BNO055_EUL_Heading_LSB   0x1A</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#define BNO055_GYR_DATA_X_LSB    0x14</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">// Operating modes</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#define CONFIGMODE    0x00</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#define ACC_ONLY      0x01</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#define MAG_ONLY      0x02</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#define GYRO_ONLY     0x03</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#define ACC_MAG       0x04</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#define ACC_GYRO      0x05</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#define MAG_GYRO      0x06</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#define AMG           0x07</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#define IMU           0x08</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#define COMPASS       0x09</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#define M4G           0x0A</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#define NDOF_FMC_OFF  0x0B</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#define NDOF          0x0C</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">// Function Prototypes</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><a class="code hl_struct" href="struct_b_n_o055_type.html">BNO055_t</a> BNO_Init(I2C_HandleTypeDef* hi2c);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><a class="code hl_struct" href="struct_b_n_o055_type.html">BNO055_t</a> BNO_OprMode(<a class="code hl_struct" href="struct_b_n_o055_type.html">BNO055_t</a> myBNO, uint8_t mode);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><a class="code hl_struct" href="struct_b_n_o055_type.html">BNO055_t</a> BNO_CalStat(<a class="code hl_struct" href="struct_b_n_o055_type.html">BNO055_t</a> myBNO);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><a class="code hl_struct" href="struct_b_n_o055_type.html">BNO055_t</a> BNO_GetEul(<a class="code hl_struct" href="struct_b_n_o055_type.html">BNO055_t</a> myBNO);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">//BNO055_t BNO_GetAcc(BNO055_t myBNO);</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">//BNO055_t BNO_GetGyr(BNO055_t myBNO);</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#endif </span><span class="comment">/* INC_BNO055_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="astruct_b_n_o055_type_html"><div class="ttname"><a href="struct_b_n_o055_type.html">BNO055Type</a></div><div class="ttdef"><b>Definition:</b> BNO055.h:14</div></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_b_n_o055_type.html">   18</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_b_n_o055_type.html">BNO055Type</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct_b_n_o055_type.html#af5f37d54bae5449ebd13c2e47483ae50">   19</a></span>        I2C_HandleTypeDef*  <a class="code hl_variable" href="struct_b_n_o055_type.html#af5f37d54bae5449ebd13c2e47483ae50">hi2c</a>;           </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct_b_n_o055_type.html#a4f103659089258ca2218132c1e92532d">   20</a></span>        uint8_t             <a class="code hl_variable" href="struct_b_n_o055_type.html#a4f103659089258ca2218132c1e92532d">opr_mode</a>;       </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="struct_b_n_o055_type.html#a479855a045de1c4cb0ce5fd9df7da8aa">   21</a></span>        uint8_t             <a class="code hl_variable" href="struct_b_n_o055_type.html#a479855a045de1c4cb0ce5fd9df7da8aa">mag_stat</a>;       </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_b_n_o055_type.html#a932af8ca59b861aebeb908f1010c29ca">   22</a></span>        uint8_t             <a class="code hl_variable" href="struct_b_n_o055_type.html#a932af8ca59b861aebeb908f1010c29ca">acc_stat</a>;       </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_b_n_o055_type.html#a317062e0b288ed132184b9c2bf94526a">   23</a></span>        uint8_t             <a class="code hl_variable" href="struct_b_n_o055_type.html#a317062e0b288ed132184b9c2bf94526a">gyr_stat</a>;       </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="struct_b_n_o055_type.html#a58f4959f03e5403ec3529082935cf43f">   24</a></span>        uint8_t             <a class="code hl_variable" href="struct_b_n_o055_type.html#a58f4959f03e5403ec3529082935cf43f">sys_stat</a>;       </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="struct_b_n_o055_type.html#a4911f9b3a0aa48a9fb77ba6c29092776">   25</a></span>        int16_t             <a class="code hl_variable" href="struct_b_n_o055_type.html#a4911f9b3a0aa48a9fb77ba6c29092776">eul_heading</a>;    </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="struct_b_n_o055_type.html#a72a85217eb5c9cacfe472c0a228d5475">   26</a></span>        int16_t             <a class="code hl_variable" href="struct_b_n_o055_type.html#a72a85217eb5c9cacfe472c0a228d5475">eul_roll</a>;       </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_b_n_o055_type.html#a5b556df0014902b6106fd27144cf636f">   27</a></span>        int16_t             <a class="code hl_variable" href="struct_b_n_o055_type.html#a5b556df0014902b6106fd27144cf636f">eul_pitch</a>;      </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    } <a class="code hl_struct" href="struct_b_n_o055_type.html">BNO055_t</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">// Device address</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#define BNO055_ADDR 0x50</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">// Important registers</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#define BNO055_OPR_MODE          0x3D</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#define BNO055_CALIB_STAT        0x35</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#define BNO055_ACC_OFFSET_X_LSB  0x55</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#define BNO055_EUL_Heading_LSB   0x1A</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#define BNO055_GYR_DATA_X_LSB    0x14</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">// Operating modes</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#define CONFIGMODE    0x00</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#define ACC_ONLY      0x01</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#define MAG_ONLY      0x02</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#define GYRO_ONLY     0x03</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#define ACC_MAG       0x04</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#define ACC_GYRO      0x05</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#define MAG_GYRO      0x06</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#define AMG           0x07</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#define IMU           0x08</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#define COMPASS       0x09</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#define M4G           0x0A</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#define NDOF_FMC_OFF  0x0B</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#define NDOF          0x0C</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">// Function Prototypes</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><a class="code hl_struct" href="struct_b_n_o055_type.html">BNO055_t</a> <a class="code hl_function" href="_b_n_o055_8h.html#af1b5337b2bc8edb7c47b5ec159283456">BNO_Init</a>(I2C_HandleTypeDef* hi2c);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><a class="code hl_struct" href="struct_b_n_o055_type.html">BNO055_t</a> <a class="code hl_function" href="_b_n_o055_8h.html#a6d65b9b02de2ad9faa9e0e3177ae7f29">BNO_OprMode</a>(<a class="code hl_struct" href="struct_b_n_o055_type.html">BNO055_t</a> myBNO, uint8_t mode);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><a class="code hl_struct" href="struct_b_n_o055_type.html">BNO055_t</a> <a class="code hl_function" href="_b_n_o055_8h.html#a6702c5b772d7eac5979a00773c90d3cd">BNO_CalStat</a>(<a class="code hl_struct" href="struct_b_n_o055_type.html">BNO055_t</a> myBNO);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><a class="code hl_struct" href="struct_b_n_o055_type.html">BNO055_t</a> <a class="code hl_function" href="_b_n_o055_8h.html#a07427cf38f64ac2af06544069669cc83">BNO_GetEul</a>(<a class="code hl_struct" href="struct_b_n_o055_type.html">BNO055_t</a> myBNO);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">//BNO055_t BNO_GetAcc(BNO055_t myBNO);</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">//BNO055_t BNO_GetGyr(BNO055_t myBNO);</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif </span><span class="comment">/* INC_BNO055_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="a_b_n_o055_8h_html_a07427cf38f64ac2af06544069669cc83"><div class="ttname"><a href="_b_n_o055_8h.html#a07427cf38f64ac2af06544069669cc83">BNO_GetEul</a></div><div class="ttdeci">BNO055_t BNO_GetEul(BNO055_t myBNO)</div><div class="ttdoc">BNO055 Euler angles. This function reads from the BNO055's euler angle registers (heading,...</div><div class="ttdef"><b>Definition:</b> BNO055.c:73</div></div>
+<div class="ttc" id="a_b_n_o055_8h_html_a6702c5b772d7eac5979a00773c90d3cd"><div class="ttname"><a href="_b_n_o055_8h.html#a6702c5b772d7eac5979a00773c90d3cd">BNO_CalStat</a></div><div class="ttdeci">BNO055_t BNO_CalStat(BNO055_t myBNO)</div><div class="ttdoc">BNO055 Calibration status. This reads from the BNO055's calibration registers and returns them as par...</div><div class="ttdef"><b>Definition:</b> BNO055.c:53</div></div>
+<div class="ttc" id="a_b_n_o055_8h_html_a6d65b9b02de2ad9faa9e0e3177ae7f29"><div class="ttname"><a href="_b_n_o055_8h.html#a6d65b9b02de2ad9faa9e0e3177ae7f29">BNO_OprMode</a></div><div class="ttdeci">BNO055_t BNO_OprMode(BNO055_t myBNO, uint8_t mode)</div><div class="ttdoc">BNO055 Change operating mode function. This function writes to the BNO055 to change the operating mod...</div><div class="ttdef"><b>Definition:</b> BNO055.c:31</div></div>
+<div class="ttc" id="a_b_n_o055_8h_html_af1b5337b2bc8edb7c47b5ec159283456"><div class="ttname"><a href="_b_n_o055_8h.html#af1b5337b2bc8edb7c47b5ec159283456">BNO_Init</a></div><div class="ttdeci">BNO055_t BNO_Init(I2C_HandleTypeDef *hi2c)</div><div class="ttdoc">BNO055 Object initialization function. This function configures a BNO055 struct to include the I2C li...</div><div class="ttdef"><b>Definition:</b> BNO055.c:16</div></div>
+<div class="ttc" id="astruct_b_n_o055_type_html"><div class="ttname"><a href="struct_b_n_o055_type.html">BNO055Type</a></div><div class="ttdoc">This structure contains the pertinent information for using and reading data from a BNO055 IMU.</div><div class="ttdef"><b>Definition:</b> BNO055.h:18</div></div>
+<div class="ttc" id="astruct_b_n_o055_type_html_a317062e0b288ed132184b9c2bf94526a"><div class="ttname"><a href="struct_b_n_o055_type.html#a317062e0b288ed132184b9c2bf94526a">BNO055Type::gyr_stat</a></div><div class="ttdeci">uint8_t gyr_stat</div><div class="ttdef"><b>Definition:</b> BNO055.h:23</div></div>
+<div class="ttc" id="astruct_b_n_o055_type_html_a479855a045de1c4cb0ce5fd9df7da8aa"><div class="ttname"><a href="struct_b_n_o055_type.html#a479855a045de1c4cb0ce5fd9df7da8aa">BNO055Type::mag_stat</a></div><div class="ttdeci">uint8_t mag_stat</div><div class="ttdef"><b>Definition:</b> BNO055.h:21</div></div>
+<div class="ttc" id="astruct_b_n_o055_type_html_a4911f9b3a0aa48a9fb77ba6c29092776"><div class="ttname"><a href="struct_b_n_o055_type.html#a4911f9b3a0aa48a9fb77ba6c29092776">BNO055Type::eul_heading</a></div><div class="ttdeci">int16_t eul_heading</div><div class="ttdef"><b>Definition:</b> BNO055.h:25</div></div>
+<div class="ttc" id="astruct_b_n_o055_type_html_a4f103659089258ca2218132c1e92532d"><div class="ttname"><a href="struct_b_n_o055_type.html#a4f103659089258ca2218132c1e92532d">BNO055Type::opr_mode</a></div><div class="ttdeci">uint8_t opr_mode</div><div class="ttdef"><b>Definition:</b> BNO055.h:20</div></div>
+<div class="ttc" id="astruct_b_n_o055_type_html_a58f4959f03e5403ec3529082935cf43f"><div class="ttname"><a href="struct_b_n_o055_type.html#a58f4959f03e5403ec3529082935cf43f">BNO055Type::sys_stat</a></div><div class="ttdeci">uint8_t sys_stat</div><div class="ttdef"><b>Definition:</b> BNO055.h:24</div></div>
+<div class="ttc" id="astruct_b_n_o055_type_html_a5b556df0014902b6106fd27144cf636f"><div class="ttname"><a href="struct_b_n_o055_type.html#a5b556df0014902b6106fd27144cf636f">BNO055Type::eul_pitch</a></div><div class="ttdeci">int16_t eul_pitch</div><div class="ttdef"><b>Definition:</b> BNO055.h:27</div></div>
+<div class="ttc" id="astruct_b_n_o055_type_html_a72a85217eb5c9cacfe472c0a228d5475"><div class="ttname"><a href="struct_b_n_o055_type.html#a72a85217eb5c9cacfe472c0a228d5475">BNO055Type::eul_roll</a></div><div class="ttdeci">int16_t eul_roll</div><div class="ttdef"><b>Definition:</b> BNO055.h:26</div></div>
+<div class="ttc" id="astruct_b_n_o055_type_html_a932af8ca59b861aebeb908f1010c29ca"><div class="ttname"><a href="struct_b_n_o055_type.html#a932af8ca59b861aebeb908f1010c29ca">BNO055Type::acc_stat</a></div><div class="ttdeci">uint8_t acc_stat</div><div class="ttdef"><b>Definition:</b> BNO055.h:22</div></div>
+<div class="ttc" id="astruct_b_n_o055_type_html_af5f37d54bae5449ebd13c2e47483ae50"><div class="ttname"><a href="struct_b_n_o055_type.html#af5f37d54bae5449ebd13c2e47483ae50">BNO055Type::hi2c</a></div><div class="ttdeci">I2C_HandleTypeDef * hi2c</div><div class="ttdef"><b>Definition:</b> BNO055.h:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

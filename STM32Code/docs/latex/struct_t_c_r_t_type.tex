@@ -1,28 +1,73 @@
 \hypertarget{struct_t_c_r_t_type}{}\doxysection{TCRTType Struct Reference}
 \label{struct_t_c_r_t_type}\index{TCRTType@{TCRTType}}
+
+
+This structure contains the pertinent information for using and reading data from a TCRT sensor and should be used like an object.  
+
+
+
+
+{\ttfamily \#include $<$TCRT.\+h$>$}
+
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{struct_t_c_r_t_type_a3b8ea0d4a8b27d350f273a50a16fc9cb}\label{struct_t_c_r_t_type_a3b8ea0d4a8b27d350f273a50a16fc9cb}} 
-ADC\+\_\+\+Handle\+Type\+Def $\ast$ {\bfseries hadc}
+ADC\+\_\+\+Handle\+Type\+Def $\ast$ \mbox{\hyperlink{struct_t_c_r_t_type_a3b8ea0d4a8b27d350f273a50a16fc9cb}{hadc}}
 \item 
-\mbox{\Hypertarget{struct_t_c_r_t_type_a70530c55388ec8cd3d9a7bfbdde0f754}\label{struct_t_c_r_t_type_a70530c55388ec8cd3d9a7bfbdde0f754}} 
-uint32\+\_\+t {\bfseries channel}
+uint32\+\_\+t \mbox{\hyperlink{struct_t_c_r_t_type_a70530c55388ec8cd3d9a7bfbdde0f754}{channel}}
 \item 
-\mbox{\Hypertarget{struct_t_c_r_t_type_a46ce620f4db2ab80a52ea1de2d5a868d}\label{struct_t_c_r_t_type_a46ce620f4db2ab80a52ea1de2d5a868d}} 
-GPIO\+\_\+\+Type\+Def $\ast$ {\bfseries Dig\+\_\+\+Port}
+GPIO\+\_\+\+Type\+Def $\ast$ \mbox{\hyperlink{struct_t_c_r_t_type_a46ce620f4db2ab80a52ea1de2d5a868d}{Dig\+\_\+\+Port}}
 \item 
-\mbox{\Hypertarget{struct_t_c_r_t_type_a8b34dd395a687dd9f4f6f6cdfd7a3440}\label{struct_t_c_r_t_type_a8b34dd395a687dd9f4f6f6cdfd7a3440}} 
-uint16\+\_\+t {\bfseries Dig\+\_\+\+Pin}
+uint16\+\_\+t \mbox{\hyperlink{struct_t_c_r_t_type_a8b34dd395a687dd9f4f6f6cdfd7a3440}{Dig\+\_\+\+Pin}}
 \item 
-\mbox{\Hypertarget{struct_t_c_r_t_type_a729f1164306057753d0ac1a247113e69}\label{struct_t_c_r_t_type_a729f1164306057753d0ac1a247113e69}} 
-uint16\+\_\+t {\bfseries Analog}
+uint16\+\_\+t \mbox{\hyperlink{struct_t_c_r_t_type_a729f1164306057753d0ac1a247113e69}{Analog}}
 \item 
-\mbox{\Hypertarget{struct_t_c_r_t_type_a4880695d16e34e8cf0785c5a2dcbbec9}\label{struct_t_c_r_t_type_a4880695d16e34e8cf0785c5a2dcbbec9}} 
-uint16\+\_\+t {\bfseries Digital}
+uint16\+\_\+t \mbox{\hyperlink{struct_t_c_r_t_type_a4880695d16e34e8cf0785c5a2dcbbec9}{Digital}}
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+This structure contains the pertinent information for using and reading data from a TCRT sensor and should be used like an object. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_t_c_r_t_type_a729f1164306057753d0ac1a247113e69}\label{struct_t_c_r_t_type_a729f1164306057753d0ac1a247113e69}} 
+\index{TCRTType@{TCRTType}!Analog@{Analog}}
+\index{Analog@{Analog}!TCRTType@{TCRTType}}
+\doxysubsubsection{\texorpdfstring{Analog}{Analog}}
+{\footnotesize\ttfamily uint16\+\_\+t TCRTType\+::\+Analog}
+
+Analog reading from sensor \mbox{\Hypertarget{struct_t_c_r_t_type_a70530c55388ec8cd3d9a7bfbdde0f754}\label{struct_t_c_r_t_type_a70530c55388ec8cd3d9a7bfbdde0f754}} 
+\index{TCRTType@{TCRTType}!channel@{channel}}
+\index{channel@{channel}!TCRTType@{TCRTType}}
+\doxysubsubsection{\texorpdfstring{channel}{channel}}
+{\footnotesize\ttfamily uint32\+\_\+t TCRTType\+::channel}
+
+ADC channel number attached to analog signal \mbox{\Hypertarget{struct_t_c_r_t_type_a8b34dd395a687dd9f4f6f6cdfd7a3440}\label{struct_t_c_r_t_type_a8b34dd395a687dd9f4f6f6cdfd7a3440}} 
+\index{TCRTType@{TCRTType}!Dig\_Pin@{Dig\_Pin}}
+\index{Dig\_Pin@{Dig\_Pin}!TCRTType@{TCRTType}}
+\doxysubsubsection{\texorpdfstring{Dig\_Pin}{Dig\_Pin}}
+{\footnotesize\ttfamily uint16\+\_\+t TCRTType\+::\+Dig\+\_\+\+Pin}
+
+GPIO Pin attached to digital pin \mbox{\Hypertarget{struct_t_c_r_t_type_a46ce620f4db2ab80a52ea1de2d5a868d}\label{struct_t_c_r_t_type_a46ce620f4db2ab80a52ea1de2d5a868d}} 
+\index{TCRTType@{TCRTType}!Dig\_Port@{Dig\_Port}}
+\index{Dig\_Port@{Dig\_Port}!TCRTType@{TCRTType}}
+\doxysubsubsection{\texorpdfstring{Dig\_Port}{Dig\_Port}}
+{\footnotesize\ttfamily GPIO\+\_\+\+Type\+Def$\ast$ TCRTType\+::\+Dig\+\_\+\+Port}
+
+GPIO Port attached to digital pin \mbox{\Hypertarget{struct_t_c_r_t_type_a4880695d16e34e8cf0785c5a2dcbbec9}\label{struct_t_c_r_t_type_a4880695d16e34e8cf0785c5a2dcbbec9}} 
+\index{TCRTType@{TCRTType}!Digital@{Digital}}
+\index{Digital@{Digital}!TCRTType@{TCRTType}}
+\doxysubsubsection{\texorpdfstring{Digital}{Digital}}
+{\footnotesize\ttfamily uint16\+\_\+t TCRTType\+::\+Digital}
+
+Digital reading from sensor \mbox{\Hypertarget{struct_t_c_r_t_type_a3b8ea0d4a8b27d350f273a50a16fc9cb}\label{struct_t_c_r_t_type_a3b8ea0d4a8b27d350f273a50a16fc9cb}} 
+\index{TCRTType@{TCRTType}!hadc@{hadc}}
+\index{hadc@{hadc}!TCRTType@{TCRTType}}
+\doxysubsubsection{\texorpdfstring{hadc}{hadc}}
+{\footnotesize\ttfamily ADC\+\_\+\+Handle\+Type\+Def$\ast$ TCRTType\+::hadc}
+
+ADC handle pointer 
+
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Inc/TCRT.\+h\end{DoxyCompactItemize}
+Inc/\mbox{\hyperlink{_t_c_r_t_8h}{TCRT.\+h}}\end{DoxyCompactItemize}

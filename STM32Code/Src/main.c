@@ -1,12 +1,12 @@
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body to implement simple remote control and
+  * @file             main.c
+  * @brief            Main program body to implement simple remote control and
   *                   deadman's functionality. For this file, please just look
   *                   at the source code.
   * @author           Sean Wahl (+STM)
-  * @date           : June 14, 2023
+  * @date             June 14, 2023
   ******************************************************************************
   * @attention
   *

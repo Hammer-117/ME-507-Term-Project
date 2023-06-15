@@ -1,0 +1,134 @@
+\hypertarget{_t_c_r_t_8h}{}\doxysection{Inc/\+TCRT.h File Reference}
+\label{_t_c_r_t_8h}\index{Inc/TCRT.h@{Inc/TCRT.h}}
+
+
+This is a header file for \mbox{\hyperlink{_t_c_r_t_8c}{TCRT.\+c}}, the line follower driver.  
+
+
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_t_c_r_t_type}{TCRTType}}
+\begin{DoxyCompactList}\small\item\em This structure contains the pertinent information for using and reading data from a TCRT sensor and should be used like an object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_t_c_r_t_8h_a3834d473289a2f82306270b6b112ebb4}\label{_t_c_r_t_8h_a3834d473289a2f82306270b6b112ebb4}} 
+typedef struct \mbox{\hyperlink{struct_t_c_r_t_type}{TCRTType}} {\bfseries TCRT\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_t_c_r_t_8h_a3a1c1ac3606a4b4fa0937bf9f003614e}\label{_t_c_r_t_8h_a3a1c1ac3606a4b4fa0937bf9f003614e}} 
+void {\bfseries TCRT\+\_\+\+Error} (void)
+\item 
+\mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\+\_\+t}} \mbox{\hyperlink{_t_c_r_t_8h_a3c60432b0e85f09b802aafbf76320dc8}{TCRT\+\_\+\+Init}} (ADC\+\_\+\+Handle\+Type\+Def $\ast$hadc, uint32\+\_\+t channel, GPIO\+\_\+\+Type\+Def $\ast$Dig\+\_\+\+Port, uint16\+\_\+t Dig\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em TCRT Object initialization function. This function configures an TCRT struct to include all pertinent information for gathering data from the sensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\+\_\+t}} \mbox{\hyperlink{_t_c_r_t_8h_ae2df2987f1a663c3f55f68df9a4784f9}{TCRT\+\_\+\+Read\+All}} (\mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\+\_\+t}} my\+TCRT)
+\begin{DoxyCompactList}\small\item\em TCRT Full read function. This function reads both the digital and analog reading from the TCRT and puts them in the TCRT struct for accessibility. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\+\_\+t}} \mbox{\hyperlink{_t_c_r_t_8h_a4b4f0e378be8928dc24aef4508952d48}{TCRT\+\_\+\+Read\+Analog}} (\mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\+\_\+t}} my\+TCRT)
+\begin{DoxyCompactList}\small\item\em TCRT Analog read function. This function reads only the analog reading from the TCRT and puts it in the TCRT struct for accessibility. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\+\_\+t}} \mbox{\hyperlink{_t_c_r_t_8h_a526b5aaaca44a8a72ad573f5e61a6dd6}{TCRT\+\_\+\+Read\+Digital}} (\mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\+\_\+t}} my\+TCRT)
+\begin{DoxyCompactList}\small\item\em TCRT Digital read function This function reads only the digital reading from the TCRT and puts it in the TCRT struct for accessibility. Note\+: This value\textquotesingle{}s threshold is controlled through a potentiometer on the TCRT. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is a header file for \mbox{\hyperlink{_t_c_r_t_8c}{TCRT.\+c}}, the line follower driver. 
+
+\begin{DoxyAuthor}{Author}
+Sean Wahl 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 14, 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_t_c_r_t_8h_a3c60432b0e85f09b802aafbf76320dc8}\label{_t_c_r_t_8h_a3c60432b0e85f09b802aafbf76320dc8}} 
+\index{TCRT.h@{TCRT.h}!TCRT\_Init@{TCRT\_Init}}
+\index{TCRT\_Init@{TCRT\_Init}!TCRT.h@{TCRT.h}}
+\doxysubsubsection{\texorpdfstring{TCRT\_Init()}{TCRT\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\+\_\+t}} TCRT\+\_\+\+Init (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Handle\+Type\+Def $\ast$}]{hadc,  }\item[{uint32\+\_\+t}]{channel,  }\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{Dig\+\_\+\+Port,  }\item[{uint16\+\_\+t}]{Dig\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+TCRT Object initialization function. This function configures an TCRT struct to include all pertinent information for gathering data from the sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hadc} & ADC handle pointer \\
+\hline
+{\em channel} & ADC channel attached to the connected analog pin \\
+\hline
+{\em Dig\+\_\+\+Port} & GPIO Port connected to the digital pin \\
+\hline
+{\em Dig\+\_\+\+Pin} & GPIO Pin number of the connected digital pin \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & a TCRT struct for future command use. ~\newline
+ \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{_t_c_r_t_8h_ae2df2987f1a663c3f55f68df9a4784f9}\label{_t_c_r_t_8h_ae2df2987f1a663c3f55f68df9a4784f9}} 
+\index{TCRT.h@{TCRT.h}!TCRT\_ReadAll@{TCRT\_ReadAll}}
+\index{TCRT\_ReadAll@{TCRT\_ReadAll}!TCRT.h@{TCRT.h}}
+\doxysubsubsection{\texorpdfstring{TCRT\_ReadAll()}{TCRT\_ReadAll()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\+\_\+t}} TCRT\+\_\+\+Read\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\+\_\+t}}}]{my\+TCRT }\end{DoxyParamCaption})}
+
+
+
+TCRT Full read function. This function reads both the digital and analog reading from the TCRT and puts them in the TCRT struct for accessibility. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+TCRT} & TCRT type struct \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & a TCRT struct for accessing values \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{_t_c_r_t_8h_a4b4f0e378be8928dc24aef4508952d48}\label{_t_c_r_t_8h_a4b4f0e378be8928dc24aef4508952d48}} 
+\index{TCRT.h@{TCRT.h}!TCRT\_ReadAnalog@{TCRT\_ReadAnalog}}
+\index{TCRT\_ReadAnalog@{TCRT\_ReadAnalog}!TCRT.h@{TCRT.h}}
+\doxysubsubsection{\texorpdfstring{TCRT\_ReadAnalog()}{TCRT\_ReadAnalog()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\+\_\+t}} TCRT\+\_\+\+Read\+Analog (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\+\_\+t}}}]{my\+TCRT }\end{DoxyParamCaption})}
+
+
+
+TCRT Analog read function. This function reads only the analog reading from the TCRT and puts it in the TCRT struct for accessibility. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+TCRT} & TCRT type struct \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & a TCRT struct for accessing values \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{_t_c_r_t_8h_a526b5aaaca44a8a72ad573f5e61a6dd6}\label{_t_c_r_t_8h_a526b5aaaca44a8a72ad573f5e61a6dd6}} 
+\index{TCRT.h@{TCRT.h}!TCRT\_ReadDigital@{TCRT\_ReadDigital}}
+\index{TCRT\_ReadDigital@{TCRT\_ReadDigital}!TCRT.h@{TCRT.h}}
+\doxysubsubsection{\texorpdfstring{TCRT\_ReadDigital()}{TCRT\_ReadDigital()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\+\_\+t}} TCRT\+\_\+\+Read\+Digital (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_c_r_t_type}{TCRT\+\_\+t}}}]{my\+TCRT }\end{DoxyParamCaption})}
+
+
+
+TCRT Digital read function This function reads only the digital reading from the TCRT and puts it in the TCRT struct for accessibility. Note\+: This value\textquotesingle{}s threshold is controlled through a potentiometer on the TCRT. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+TCRT} & TCRT type struct \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & a TCRT struct for accessing values \\
+\hline
+\end{DoxyRetVals}

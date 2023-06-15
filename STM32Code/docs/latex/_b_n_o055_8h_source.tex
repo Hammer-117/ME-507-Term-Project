@@ -1,65 +1,59 @@
 \hypertarget{_b_n_o055_8h_source}{}\doxysection{BNO055.\+h}
 \label{_b_n_o055_8h_source}\index{Inc/BNO055.h@{Inc/BNO055.h}}
-
+\mbox{\hyperlink{_b_n_o055_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
-\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ BNO055.h}}
-\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Created\ on:\ May\ 28,\ 2023}}
-\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ seanw}}
-\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00001\ }
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ INC\_BNO055\_H\_}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ INC\_BNO055\_H\_}}
 \DoxyCodeLine{00010\ }
 \DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}stm32f4xx\_hal.h"{}}}
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
 \DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_b_n_o055_type}{BNO055Type}}\ \{}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ I2C\_HandleTypeDef*\ \ hi2c;}
-\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ uint8\_t\ \ \ \ \ \ \ \ \ \ \ \ \ opr\_mode;}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ uint8\_t\ \ \ \ \ \ \ \ \ \ \ \ \ mag\_stat;}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ uint8\_t\ \ \ \ \ \ \ \ \ \ \ \ \ acc\_stat;}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ uint8\_t\ \ \ \ \ \ \ \ \ \ \ \ \ gyr\_stat;}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ uint8\_t\ \ \ \ \ \ \ \ \ \ \ \ \ sys\_stat;}
-\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ int16\_t\ \ \ \ \ \ \ \ \ \ \ \ \ eul\_heading;}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ int16\_t\ \ \ \ \ \ \ \ \ \ \ \ \ eul\_roll;}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ int16\_t\ \ \ \ \ \ \ \ \ \ \ \ \ eul\_pitch;}
-\DoxyCodeLine{00024\ \ \ \ \ \}\ \mbox{\hyperlink{struct_b_n_o055_type}{BNO055\_t}};}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \textcolor{comment}{//\ Device\ address}}
-\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ BNO055\_ADDR\ 0x50}}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00029\ \textcolor{comment}{//\ Important\ registers}}
-\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ BNO055\_OPR\_MODE\ \ \ \ \ \ \ \ \ \ 0x3D}}
-\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ BNO055\_CALIB\_STAT\ \ \ \ \ \ \ \ 0x35}}
-\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ BNO055\_ACC\_OFFSET\_X\_LSB\ \ 0x55}}
-\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ BNO055\_EUL\_Heading\_LSB\ \ \ 0x1A}}
-\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ BNO055\_GYR\_DATA\_X\_LSB\ \ \ \ 0x14}}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \textcolor{comment}{//\ Operating\ modes}}
-\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ CONFIGMODE\ \ \ \ 0x00}}
-\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ ACC\_ONLY\ \ \ \ \ \ 0x01}}
-\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ MAG\_ONLY\ \ \ \ \ \ 0x02}}
-\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ GYRO\_ONLY\ \ \ \ \ 0x03}}
-\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ ACC\_MAG\ \ \ \ \ \ \ 0x04}}
-\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ ACC\_GYRO\ \ \ \ \ \ 0x05}}
-\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ MAG\_GYRO\ \ \ \ \ \ 0x06}}
-\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ AMG\ \ \ \ \ \ \ \ \ \ \ 0x07}}
-\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ IMU\ \ \ \ \ \ \ \ \ \ \ 0x08}}
-\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ COMPASS\ \ \ \ \ \ \ 0x09}}
-\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ M4G\ \ \ \ \ \ \ \ \ \ \ 0x0A}}
-\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ NDOF\_FMC\_OFF\ \ 0x0B}}
-\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ NDOF\ \ \ \ \ \ \ \ \ \ 0x0C}}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \textcolor{comment}{//\ Function\ Prototypes}}
-\DoxyCodeLine{00052\ \mbox{\hyperlink{struct_b_n_o055_type}{BNO055\_t}}\ BNO\_Init(I2C\_HandleTypeDef*\ hi2c);}
-\DoxyCodeLine{00053\ \mbox{\hyperlink{struct_b_n_o055_type}{BNO055\_t}}\ BNO\_OprMode(\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\_t}}\ myBNO,\ uint8\_t\ mode);}
-\DoxyCodeLine{00054\ \mbox{\hyperlink{struct_b_n_o055_type}{BNO055\_t}}\ BNO\_CalStat(\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\_t}}\ myBNO);}
-\DoxyCodeLine{00055\ \mbox{\hyperlink{struct_b_n_o055_type}{BNO055\_t}}\ BNO\_GetEul(\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\_t}}\ myBNO);}
-\DoxyCodeLine{00056\ \textcolor{comment}{//BNO055\_t\ BNO\_GetAcc(BNO055\_t\ myBNO);}}
-\DoxyCodeLine{00057\ \textcolor{comment}{//BNO055\_t\ BNO\_GetGyr(BNO055\_t\ myBNO);}}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_BNO055\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_b_n_o055_type}{BNO055Type}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ I2C\_HandleTypeDef*\ \ \mbox{\hyperlink{struct_b_n_o055_type_af5f37d54bae5449ebd13c2e47483ae50}{hi2c}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ uint8\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_b_n_o055_type_a4f103659089258ca2218132c1e92532d}{opr\_mode}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ uint8\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_b_n_o055_type_a479855a045de1c4cb0ce5fd9df7da8aa}{mag\_stat}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ uint8\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_b_n_o055_type_a932af8ca59b861aebeb908f1010c29ca}{acc\_stat}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ uint8\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_b_n_o055_type_a317062e0b288ed132184b9c2bf94526a}{gyr\_stat}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ uint8\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_b_n_o055_type_a58f4959f03e5403ec3529082935cf43f}{sys\_stat}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ int16\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_b_n_o055_type_a4911f9b3a0aa48a9fb77ba6c29092776}{eul\_heading}};\ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ int16\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_b_n_o055_type_a72a85217eb5c9cacfe472c0a228d5475}{eul\_roll}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ int16\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_b_n_o055_type_a5b556df0014902b6106fd27144cf636f}{eul\_pitch}};\ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \}\ \mbox{\hyperlink{struct_b_n_o055_type}{BNO055\_t}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ Device\ address}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ BNO055\_ADDR\ 0x50}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{comment}{//\ Important\ registers}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ BNO055\_OPR\_MODE\ \ \ \ \ \ \ \ \ \ 0x3D}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ BNO055\_CALIB\_STAT\ \ \ \ \ \ \ \ 0x35}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ BNO055\_ACC\_OFFSET\_X\_LSB\ \ 0x55}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ BNO055\_EUL\_Heading\_LSB\ \ \ 0x1A}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ BNO055\_GYR\_DATA\_X\_LSB\ \ \ \ 0x14}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{//\ Operating\ modes}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ CONFIGMODE\ \ \ \ 0x00}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ ACC\_ONLY\ \ \ \ \ \ 0x01}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ MAG\_ONLY\ \ \ \ \ \ 0x02}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ GYRO\_ONLY\ \ \ \ \ 0x03}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ ACC\_MAG\ \ \ \ \ \ \ 0x04}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ ACC\_GYRO\ \ \ \ \ \ 0x05}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ MAG\_GYRO\ \ \ \ \ \ 0x06}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ AMG\ \ \ \ \ \ \ \ \ \ \ 0x07}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ IMU\ \ \ \ \ \ \ \ \ \ \ 0x08}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ COMPASS\ \ \ \ \ \ \ 0x09}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ M4G\ \ \ \ \ \ \ \ \ \ \ 0x0A}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ NDOF\_FMC\_OFF\ \ 0x0B}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ NDOF\ \ \ \ \ \ \ \ \ \ 0x0C}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{//\ Function\ Prototypes}}
+\DoxyCodeLine{00056\ \mbox{\hyperlink{struct_b_n_o055_type}{BNO055\_t}}\ \mbox{\hyperlink{_b_n_o055_8h_af1b5337b2bc8edb7c47b5ec159283456}{BNO\_Init}}(I2C\_HandleTypeDef*\ hi2c);}
+\DoxyCodeLine{00057\ \mbox{\hyperlink{struct_b_n_o055_type}{BNO055\_t}}\ \mbox{\hyperlink{_b_n_o055_8h_a6d65b9b02de2ad9faa9e0e3177ae7f29}{BNO\_OprMode}}(\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\_t}}\ myBNO,\ uint8\_t\ mode);}
+\DoxyCodeLine{00058\ \mbox{\hyperlink{struct_b_n_o055_type}{BNO055\_t}}\ \mbox{\hyperlink{_b_n_o055_8h_a6702c5b772d7eac5979a00773c90d3cd}{BNO\_CalStat}}(\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\_t}}\ myBNO);}
+\DoxyCodeLine{00059\ \mbox{\hyperlink{struct_b_n_o055_type}{BNO055\_t}}\ \mbox{\hyperlink{_b_n_o055_8h_a07427cf38f64ac2af06544069669cc83}{BNO\_GetEul}}(\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\_t}}\ myBNO);}
+\DoxyCodeLine{00060\ \textcolor{comment}{//BNO055\_t\ BNO\_GetAcc(BNO055\_t\ myBNO);}}
+\DoxyCodeLine{00061\ \textcolor{comment}{//BNO055\_t\ BNO\_GetGyr(BNO055\_t\ myBNO);}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INC\_BNO055\_H\_\ */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

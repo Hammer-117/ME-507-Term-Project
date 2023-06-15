@@ -1,0 +1,186 @@
+\hypertarget{_b_n_o055_8h}{}\doxysection{Inc/\+BNO055.h File Reference}
+\label{_b_n_o055_8h}\index{Inc/BNO055.h@{Inc/BNO055.h}}
+
+
+This is a header file for \mbox{\hyperlink{_b_n_o055_8c}{BNO055.\+c}}, the IMU driver.  
+
+
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+Type}}
+\begin{DoxyCompactList}\small\item\em This structure contains the pertinent information for using and reading data from a BNO055 IMU. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_b_n_o055_8h_af99e6b0453d87e52e02f5456095aaac0}\label{_b_n_o055_8h_af99e6b0453d87e52e02f5456095aaac0}} 
+\#define {\bfseries BNO055\+\_\+\+ADDR}~0x50
+\item 
+\mbox{\Hypertarget{_b_n_o055_8h_a97c0fa2632f2d79c8bb4c8b738a1914f}\label{_b_n_o055_8h_a97c0fa2632f2d79c8bb4c8b738a1914f}} 
+\#define {\bfseries BNO055\+\_\+\+OPR\+\_\+\+MODE}~0x3D
+\item 
+\mbox{\Hypertarget{_b_n_o055_8h_a8238b8e53c81cca65781b44a580e6dcd}\label{_b_n_o055_8h_a8238b8e53c81cca65781b44a580e6dcd}} 
+\#define {\bfseries BNO055\+\_\+\+CALIB\+\_\+\+STAT}~0x35
+\item 
+\mbox{\Hypertarget{_b_n_o055_8h_a76847b72af9ab9ba75c1e644276c6c2a}\label{_b_n_o055_8h_a76847b72af9ab9ba75c1e644276c6c2a}} 
+\#define {\bfseries BNO055\+\_\+\+ACC\+\_\+\+OFFSET\+\_\+\+X\+\_\+\+LSB}~0x55
+\item 
+\mbox{\Hypertarget{_b_n_o055_8h_af5f7f517df0e608174d56016ce4e4e9f}\label{_b_n_o055_8h_af5f7f517df0e608174d56016ce4e4e9f}} 
+\#define {\bfseries BNO055\+\_\+\+EUL\+\_\+\+Heading\+\_\+\+LSB}~0x1A
+\item 
+\mbox{\Hypertarget{_b_n_o055_8h_a6fcc9d66a8dba9588406349ab87fd029}\label{_b_n_o055_8h_a6fcc9d66a8dba9588406349ab87fd029}} 
+\#define {\bfseries BNO055\+\_\+\+GYR\+\_\+\+DATA\+\_\+\+X\+\_\+\+LSB}~0x14
+\item 
+\mbox{\Hypertarget{_b_n_o055_8h_aa2323157b7cc4347a81e41418014f314}\label{_b_n_o055_8h_aa2323157b7cc4347a81e41418014f314}} 
+\#define {\bfseries CONFIGMODE}~0x00
+\item 
+\mbox{\Hypertarget{_b_n_o055_8h_abfc0e8ac40674a84a0ebaf6439c3eb4d}\label{_b_n_o055_8h_abfc0e8ac40674a84a0ebaf6439c3eb4d}} 
+\#define {\bfseries ACC\+\_\+\+ONLY}~0x01
+\item 
+\mbox{\Hypertarget{_b_n_o055_8h_a79bb30646135c3dea2e092e627f63f7d}\label{_b_n_o055_8h_a79bb30646135c3dea2e092e627f63f7d}} 
+\#define {\bfseries MAG\+\_\+\+ONLY}~0x02
+\item 
+\mbox{\Hypertarget{_b_n_o055_8h_a4f64f73279384958d388cbccbe77253a}\label{_b_n_o055_8h_a4f64f73279384958d388cbccbe77253a}} 
+\#define {\bfseries GYRO\+\_\+\+ONLY}~0x03
+\item 
+\mbox{\Hypertarget{_b_n_o055_8h_a67c294804da0dad784434c9d1dcfd0d5}\label{_b_n_o055_8h_a67c294804da0dad784434c9d1dcfd0d5}} 
+\#define {\bfseries ACC\+\_\+\+MAG}~0x04
+\item 
+\mbox{\Hypertarget{_b_n_o055_8h_aa54d98576b1faedc5fbc1fc77df9ca0c}\label{_b_n_o055_8h_aa54d98576b1faedc5fbc1fc77df9ca0c}} 
+\#define {\bfseries ACC\+\_\+\+GYRO}~0x05
+\item 
+\mbox{\Hypertarget{_b_n_o055_8h_af88048d394479c6337305be1e1217734}\label{_b_n_o055_8h_af88048d394479c6337305be1e1217734}} 
+\#define {\bfseries MAG\+\_\+\+GYRO}~0x06
+\item 
+\mbox{\Hypertarget{_b_n_o055_8h_af4cf622e7f3995497ffcff498882764d}\label{_b_n_o055_8h_af4cf622e7f3995497ffcff498882764d}} 
+\#define {\bfseries AMG}~0x07
+\item 
+\mbox{\Hypertarget{_b_n_o055_8h_a8c382fa1b6c1597ff8b3c7311b215595}\label{_b_n_o055_8h_a8c382fa1b6c1597ff8b3c7311b215595}} 
+\#define {\bfseries IMU}~0x08
+\item 
+\mbox{\Hypertarget{_b_n_o055_8h_a13a12dc5402e47b6fdf1fa3447c3cc8e}\label{_b_n_o055_8h_a13a12dc5402e47b6fdf1fa3447c3cc8e}} 
+\#define {\bfseries COMPASS}~0x09
+\item 
+\mbox{\Hypertarget{_b_n_o055_8h_a00b2c90957b4b0d1239546614923d95f}\label{_b_n_o055_8h_a00b2c90957b4b0d1239546614923d95f}} 
+\#define {\bfseries M4G}~0x0A
+\item 
+\mbox{\Hypertarget{_b_n_o055_8h_a93537ea44b5a0a1775910bce261acd39}\label{_b_n_o055_8h_a93537ea44b5a0a1775910bce261acd39}} 
+\#define {\bfseries NDOF\+\_\+\+FMC\+\_\+\+OFF}~0x0B
+\item 
+\mbox{\Hypertarget{_b_n_o055_8h_afc2256d0d1d3499b52fbed7b8ecf0749}\label{_b_n_o055_8h_afc2256d0d1d3499b52fbed7b8ecf0749}} 
+\#define {\bfseries NDOF}~0x0C
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_b_n_o055_8h_a97c97e46acf7286808deba539533d34e}\label{_b_n_o055_8h_a97c97e46acf7286808deba539533d34e}} 
+typedef struct \mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+Type}} {\bfseries BNO055\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} \mbox{\hyperlink{_b_n_o055_8h_af1b5337b2bc8edb7c47b5ec159283456}{BNO\+\_\+\+Init}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c)
+\begin{DoxyCompactList}\small\item\em BNO055 Object initialization function. This function configures a BNO055 struct to include the I2C lines attached to the IMU. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} \mbox{\hyperlink{_b_n_o055_8h_a6d65b9b02de2ad9faa9e0e3177ae7f29}{BNO\+\_\+\+Opr\+Mode}} (\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} my\+BNO, uint8\+\_\+t mode)
+\begin{DoxyCompactList}\small\item\em BNO055 Change operating mode function. This function writes to the BNO055 to change the operating mode its in to a user specified one. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} \mbox{\hyperlink{_b_n_o055_8h_a6702c5b772d7eac5979a00773c90d3cd}{BNO\+\_\+\+Cal\+Stat}} (\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} my\+BNO)
+\begin{DoxyCompactList}\small\item\em BNO055 Calibration status. This reads from the BNO055\textquotesingle{}s calibration registers and returns them as part of the BNO struct. All statuses will be 3 when the BNO is fully calibrated (assuming NDOF mode). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} \mbox{\hyperlink{_b_n_o055_8h_a07427cf38f64ac2af06544069669cc83}{BNO\+\_\+\+Get\+Eul}} (\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} my\+BNO)
+\begin{DoxyCompactList}\small\item\em BNO055 Euler angles. This function reads from the BNO055\textquotesingle{}s euler angle registers (heading, roll, and pitch) and returns them as part of the BNO struct. The system should be calibrated before using this function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is a header file for \mbox{\hyperlink{_b_n_o055_8c}{BNO055.\+c}}, the IMU driver. 
+
+\begin{DoxyAuthor}{Author}
+Sean Wahl 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 14, 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_b_n_o055_8h_a6702c5b772d7eac5979a00773c90d3cd}\label{_b_n_o055_8h_a6702c5b772d7eac5979a00773c90d3cd}} 
+\index{BNO055.h@{BNO055.h}!BNO\_CalStat@{BNO\_CalStat}}
+\index{BNO\_CalStat@{BNO\_CalStat}!BNO055.h@{BNO055.h}}
+\doxysubsubsection{\texorpdfstring{BNO\_CalStat()}{BNO\_CalStat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} BNO\+\_\+\+Cal\+Stat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}}}]{my\+BNO }\end{DoxyParamCaption})}
+
+
+
+BNO055 Calibration status. This reads from the BNO055\textquotesingle{}s calibration registers and returns them as part of the BNO struct. All statuses will be 3 when the BNO is fully calibrated (assuming NDOF mode). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+BNO} & BNO055 struct type \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & the BNO struct for access to the calibration statuses \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{_b_n_o055_8h_a07427cf38f64ac2af06544069669cc83}\label{_b_n_o055_8h_a07427cf38f64ac2af06544069669cc83}} 
+\index{BNO055.h@{BNO055.h}!BNO\_GetEul@{BNO\_GetEul}}
+\index{BNO\_GetEul@{BNO\_GetEul}!BNO055.h@{BNO055.h}}
+\doxysubsubsection{\texorpdfstring{BNO\_GetEul()}{BNO\_GetEul()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} BNO\+\_\+\+Get\+Eul (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}}}]{my\+BNO }\end{DoxyParamCaption})}
+
+
+
+BNO055 Euler angles. This function reads from the BNO055\textquotesingle{}s euler angle registers (heading, roll, and pitch) and returns them as part of the BNO struct. The system should be calibrated before using this function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+BNO} & BNO055 struct type \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & the BNO struct back for access to the euler angles. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{_b_n_o055_8h_af1b5337b2bc8edb7c47b5ec159283456}\label{_b_n_o055_8h_af1b5337b2bc8edb7c47b5ec159283456}} 
+\index{BNO055.h@{BNO055.h}!BNO\_Init@{BNO\_Init}}
+\index{BNO\_Init@{BNO\_Init}!BNO055.h@{BNO055.h}}
+\doxysubsubsection{\texorpdfstring{BNO\_Init()}{BNO\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} BNO\+\_\+\+Init (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2c }\end{DoxyParamCaption})}
+
+
+
+BNO055 Object initialization function. This function configures a BNO055 struct to include the I2C lines attached to the IMU. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hi2c} & I2C handle pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & a BNO055 struct for future command use. ~\newline
+ \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{_b_n_o055_8h_a6d65b9b02de2ad9faa9e0e3177ae7f29}\label{_b_n_o055_8h_a6d65b9b02de2ad9faa9e0e3177ae7f29}} 
+\index{BNO055.h@{BNO055.h}!BNO\_OprMode@{BNO\_OprMode}}
+\index{BNO\_OprMode@{BNO\_OprMode}!BNO055.h@{BNO055.h}}
+\doxysubsubsection{\texorpdfstring{BNO\_OprMode()}{BNO\_OprMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} BNO\+\_\+\+Opr\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}}}]{my\+BNO,  }\item[{uint8\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+
+
+BNO055 Change operating mode function. This function writes to the BNO055 to change the operating mode its in to a user specified one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+BNO} & BNO055 struct type \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & the BNO struct back (though not necessary) \\
+\hline
+\end{DoxyRetVals}

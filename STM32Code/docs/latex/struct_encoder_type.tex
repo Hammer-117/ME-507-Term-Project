@@ -1,28 +1,73 @@
 \hypertarget{struct_encoder_type}{}\doxysection{Encoder\+Type Struct Reference}
 \label{struct_encoder_type}\index{EncoderType@{EncoderType}}
+
+
+This structure contains the pertinent information for using and reading data from an encoder.  
+
+
+
+
+{\ttfamily \#include $<$encoder.\+h$>$}
+
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{struct_encoder_type_aff68583b2f002eead76bddcc4c2b6b1d}\label{struct_encoder_type_aff68583b2f002eead76bddcc4c2b6b1d}} 
-TIM\+\_\+\+Handle\+Type\+Def $\ast$ {\bfseries htim}
+TIM\+\_\+\+Handle\+Type\+Def $\ast$ \mbox{\hyperlink{struct_encoder_type_aff68583b2f002eead76bddcc4c2b6b1d}{htim}}
 \item 
-\mbox{\Hypertarget{struct_encoder_type_a39e5a2122af36f29b55982edee3c818f}\label{struct_encoder_type_a39e5a2122af36f29b55982edee3c818f}} 
-int64\+\_\+t {\bfseries ARR}
+int64\+\_\+t \mbox{\hyperlink{struct_encoder_type_a39e5a2122af36f29b55982edee3c818f}{ARR}}
 \item 
-\mbox{\Hypertarget{struct_encoder_type_ab757f55653a547a0743067ebe5c099ff}\label{struct_encoder_type_ab757f55653a547a0743067ebe5c099ff}} 
-int32\+\_\+t {\bfseries c2r}
+int32\+\_\+t \mbox{\hyperlink{struct_encoder_type_ab757f55653a547a0743067ebe5c099ff}{c2r}}
 \item 
-\mbox{\Hypertarget{struct_encoder_type_a23d7779fad076297824ec5f0b79c1436}\label{struct_encoder_type_a23d7779fad076297824ec5f0b79c1436}} 
-int32\+\_\+t {\bfseries prev}
+int32\+\_\+t \mbox{\hyperlink{struct_encoder_type_a23d7779fad076297824ec5f0b79c1436}{prev}}
 \item 
-\mbox{\Hypertarget{struct_encoder_type_ad4564ccff6253afff1a97aefa0c50f8d}\label{struct_encoder_type_ad4564ccff6253afff1a97aefa0c50f8d}} 
-int32\+\_\+t {\bfseries count}
+int32\+\_\+t \mbox{\hyperlink{struct_encoder_type_ad4564ccff6253afff1a97aefa0c50f8d}{count}}
 \item 
-\mbox{\Hypertarget{struct_encoder_type_a7ada6a872f530891dd4dcaab1e42388f}\label{struct_encoder_type_a7ada6a872f530891dd4dcaab1e42388f}} 
-float {\bfseries countR}
+float \mbox{\hyperlink{struct_encoder_type_a7ada6a872f530891dd4dcaab1e42388f}{countR}}
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+This structure contains the pertinent information for using and reading data from an encoder. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_encoder_type_a39e5a2122af36f29b55982edee3c818f}\label{struct_encoder_type_a39e5a2122af36f29b55982edee3c818f}} 
+\index{EncoderType@{EncoderType}!ARR@{ARR}}
+\index{ARR@{ARR}!EncoderType@{EncoderType}}
+\doxysubsubsection{\texorpdfstring{ARR}{ARR}}
+{\footnotesize\ttfamily int64\+\_\+t Encoder\+Type\+::\+ARR}
+
+The timer\textquotesingle{}s auto reload value \mbox{\Hypertarget{struct_encoder_type_ab757f55653a547a0743067ebe5c099ff}\label{struct_encoder_type_ab757f55653a547a0743067ebe5c099ff}} 
+\index{EncoderType@{EncoderType}!c2r@{c2r}}
+\index{c2r@{c2r}!EncoderType@{EncoderType}}
+\doxysubsubsection{\texorpdfstring{c2r}{c2r}}
+{\footnotesize\ttfamily int32\+\_\+t Encoder\+Type\+::c2r}
+
+The encoder\textquotesingle{}s count to revolution conversion \mbox{\Hypertarget{struct_encoder_type_ad4564ccff6253afff1a97aefa0c50f8d}\label{struct_encoder_type_ad4564ccff6253afff1a97aefa0c50f8d}} 
+\index{EncoderType@{EncoderType}!count@{count}}
+\index{count@{count}!EncoderType@{EncoderType}}
+\doxysubsubsection{\texorpdfstring{count}{count}}
+{\footnotesize\ttfamily int32\+\_\+t Encoder\+Type\+::count}
+
+The encoder\textquotesingle{}s count in ticks \mbox{\Hypertarget{struct_encoder_type_a7ada6a872f530891dd4dcaab1e42388f}\label{struct_encoder_type_a7ada6a872f530891dd4dcaab1e42388f}} 
+\index{EncoderType@{EncoderType}!countR@{countR}}
+\index{countR@{countR}!EncoderType@{EncoderType}}
+\doxysubsubsection{\texorpdfstring{countR}{countR}}
+{\footnotesize\ttfamily float Encoder\+Type\+::countR}
+
+The encoder\textquotesingle{}s count in radians \mbox{\Hypertarget{struct_encoder_type_aff68583b2f002eead76bddcc4c2b6b1d}\label{struct_encoder_type_aff68583b2f002eead76bddcc4c2b6b1d}} 
+\index{EncoderType@{EncoderType}!htim@{htim}}
+\index{htim@{htim}!EncoderType@{EncoderType}}
+\doxysubsubsection{\texorpdfstring{htim}{htim}}
+{\footnotesize\ttfamily TIM\+\_\+\+Handle\+Type\+Def$\ast$ Encoder\+Type\+::htim}
+
+The timer handle pointer \mbox{\Hypertarget{struct_encoder_type_a23d7779fad076297824ec5f0b79c1436}\label{struct_encoder_type_a23d7779fad076297824ec5f0b79c1436}} 
+\index{EncoderType@{EncoderType}!prev@{prev}}
+\index{prev@{prev}!EncoderType@{EncoderType}}
+\doxysubsubsection{\texorpdfstring{prev}{prev}}
+{\footnotesize\ttfamily int32\+\_\+t Encoder\+Type\+::prev}
+
+The timer\textquotesingle{}s previous reading 
+
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Inc/encoder.\+h\end{DoxyCompactItemize}
+Inc/\mbox{\hyperlink{encoder_8h}{encoder.\+h}}\end{DoxyCompactItemize}

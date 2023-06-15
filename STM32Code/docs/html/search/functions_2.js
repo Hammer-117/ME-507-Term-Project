@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main.c']]]
+  ['disablemotor_0',['disableMotor',['../motor_driver_8h.html#a2735ddcd20306b24f3fca99a8c84e9d6',1,'disableMotor(motorType_t motor):&#160;motorDriver.c'],['../motor_driver_8c.html#a2735ddcd20306b24f3fca99a8c84e9d6',1,'disableMotor(motorType_t motor):&#160;motorDriver.c']]]
 ];

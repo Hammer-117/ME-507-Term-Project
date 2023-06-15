@@ -1,0 +1,114 @@
+\hypertarget{_b_n_o055_8c}{}\doxysection{Src/\+BNO055.c File Reference}
+\label{_b_n_o055_8c}\index{Src/BNO055.c@{Src/BNO055.c}}
+
+
+This file provides the functionality to use a BNO055 inertial measurement unit.  
+
+
+{\ttfamily \#include \char`\"{}BNO055.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} \mbox{\hyperlink{_b_n_o055_8c_af1b5337b2bc8edb7c47b5ec159283456}{BNO\+\_\+\+Init}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$hi2c)
+\begin{DoxyCompactList}\small\item\em BNO055 Object initialization function. This function configures a BNO055 struct to include the I2C lines attached to the IMU. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} \mbox{\hyperlink{_b_n_o055_8c_a6d65b9b02de2ad9faa9e0e3177ae7f29}{BNO\+\_\+\+Opr\+Mode}} (\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} my\+BNO, uint8\+\_\+t mode)
+\begin{DoxyCompactList}\small\item\em BNO055 Change operating mode function. This function writes to the BNO055 to change the operating mode its in to a user specified one. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} \mbox{\hyperlink{_b_n_o055_8c_a6702c5b772d7eac5979a00773c90d3cd}{BNO\+\_\+\+Cal\+Stat}} (\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} my\+BNO)
+\begin{DoxyCompactList}\small\item\em BNO055 Calibration status. This reads from the BNO055\textquotesingle{}s calibration registers and returns them as part of the BNO struct. All statuses will be 3 when the BNO is fully calibrated (assuming NDOF mode). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} \mbox{\hyperlink{_b_n_o055_8c_a07427cf38f64ac2af06544069669cc83}{BNO\+\_\+\+Get\+Eul}} (\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} my\+BNO)
+\begin{DoxyCompactList}\small\item\em BNO055 Euler angles. This function reads from the BNO055\textquotesingle{}s euler angle registers (heading, roll, and pitch) and returns them as part of the BNO struct. The system should be calibrated before using this function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides the functionality to use a BNO055 inertial measurement unit. 
+
+\begin{DoxyAuthor}{Author}
+Sean Wahl 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 14, 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_b_n_o055_8c_a6702c5b772d7eac5979a00773c90d3cd}\label{_b_n_o055_8c_a6702c5b772d7eac5979a00773c90d3cd}} 
+\index{BNO055.c@{BNO055.c}!BNO\_CalStat@{BNO\_CalStat}}
+\index{BNO\_CalStat@{BNO\_CalStat}!BNO055.c@{BNO055.c}}
+\doxysubsubsection{\texorpdfstring{BNO\_CalStat()}{BNO\_CalStat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} BNO\+\_\+\+Cal\+Stat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}}}]{my\+BNO }\end{DoxyParamCaption})}
+
+
+
+BNO055 Calibration status. This reads from the BNO055\textquotesingle{}s calibration registers and returns them as part of the BNO struct. All statuses will be 3 when the BNO is fully calibrated (assuming NDOF mode). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+BNO} & BNO055 struct type \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & the BNO struct for access to the calibration statuses \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{_b_n_o055_8c_a07427cf38f64ac2af06544069669cc83}\label{_b_n_o055_8c_a07427cf38f64ac2af06544069669cc83}} 
+\index{BNO055.c@{BNO055.c}!BNO\_GetEul@{BNO\_GetEul}}
+\index{BNO\_GetEul@{BNO\_GetEul}!BNO055.c@{BNO055.c}}
+\doxysubsubsection{\texorpdfstring{BNO\_GetEul()}{BNO\_GetEul()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} BNO\+\_\+\+Get\+Eul (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}}}]{my\+BNO }\end{DoxyParamCaption})}
+
+
+
+BNO055 Euler angles. This function reads from the BNO055\textquotesingle{}s euler angle registers (heading, roll, and pitch) and returns them as part of the BNO struct. The system should be calibrated before using this function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+BNO} & BNO055 struct type \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & the BNO struct back for access to the euler angles. \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{_b_n_o055_8c_af1b5337b2bc8edb7c47b5ec159283456}\label{_b_n_o055_8c_af1b5337b2bc8edb7c47b5ec159283456}} 
+\index{BNO055.c@{BNO055.c}!BNO\_Init@{BNO\_Init}}
+\index{BNO\_Init@{BNO\_Init}!BNO055.c@{BNO055.c}}
+\doxysubsubsection{\texorpdfstring{BNO\_Init()}{BNO\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} BNO\+\_\+\+Init (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hi2c }\end{DoxyParamCaption})}
+
+
+
+BNO055 Object initialization function. This function configures a BNO055 struct to include the I2C lines attached to the IMU. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hi2c} & I2C handle pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & a BNO055 struct for future command use. ~\newline
+ \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{_b_n_o055_8c_a6d65b9b02de2ad9faa9e0e3177ae7f29}\label{_b_n_o055_8c_a6d65b9b02de2ad9faa9e0e3177ae7f29}} 
+\index{BNO055.c@{BNO055.c}!BNO\_OprMode@{BNO\_OprMode}}
+\index{BNO\_OprMode@{BNO\_OprMode}!BNO055.c@{BNO055.c}}
+\doxysubsubsection{\texorpdfstring{BNO\_OprMode()}{BNO\_OprMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}} BNO\+\_\+\+Opr\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_n_o055_type}{BNO055\+\_\+t}}}]{my\+BNO,  }\item[{uint8\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+
+
+BNO055 Change operating mode function. This function writes to the BNO055 to change the operating mode its in to a user specified one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+BNO} & BNO055 struct type \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & the BNO struct back (though not necessary) \\
+\hline
+\end{DoxyRetVals}

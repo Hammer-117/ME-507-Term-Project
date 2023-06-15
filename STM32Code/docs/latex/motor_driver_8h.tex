@@ -1,0 +1,106 @@
+\hypertarget{motor_driver_8h}{}\doxysection{Inc/motor\+Driver.h File Reference}
+\label{motor_driver_8h}\index{Inc/motorDriver.h@{Inc/motorDriver.h}}
+
+
+This is a header file for \mbox{\hyperlink{motor_driver_8c}{motor\+Driver.\+c}}, the motor driver.  
+
+
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structmotor_type}{motor\+Type}}
+\begin{DoxyCompactList}\small\item\em This structure contains the pertinent information for using a motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{motor_driver_8h_a6e68006e8ebf69f40e17455800af9edc}\label{motor_driver_8h_a6e68006e8ebf69f40e17455800af9edc}} 
+typedef struct \mbox{\hyperlink{structmotor_type}{motor\+Type}} {\bfseries motor\+Type\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{motor_driver_8h_a5538c47241a3699993a8aee1010cfb21}{set\+Duty}} (\mbox{\hyperlink{structmotor_type}{motor\+Type\+\_\+t}}, int32\+\_\+t DTY)
+\begin{DoxyCompactList}\small\item\em Sets the duty cycle of a motor. This function takes a value from 0 to 255 (in int8) to apply PWM to drive a motor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{motor_driver_8h_a5a210b7162a4a087fbb0f32a4b34eb47}{enable\+Motor}} (\mbox{\hyperlink{structmotor_type}{motor\+Type\+\_\+t}} motor)
+\begin{DoxyCompactList}\small\item\em Enables the motor. This function activates the PWM channels for the motor to run. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{motor_driver_8h_a2735ddcd20306b24f3fca99a8c84e9d6}{disable\+Motor}} (\mbox{\hyperlink{structmotor_type}{motor\+Type\+\_\+t}} motor)
+\begin{DoxyCompactList}\small\item\em Disables the motor. This function deactivates the PWM channels for the motor to cease to function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{motor_driver_8h_a038131283fc837d65129e5423fac4f5a}{brake\+Motor}} (\mbox{\hyperlink{structmotor_type}{motor\+Type\+\_\+t}} motor)
+\begin{DoxyCompactList}\small\item\em Brakes the motor. This function sets the duty cycles to their maximums in order to slow down the motor quickly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is a header file for \mbox{\hyperlink{motor_driver_8c}{motor\+Driver.\+c}}, the motor driver. 
+
+\begin{DoxyAuthor}{Author}
+Sean Wahl 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 14, 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{motor_driver_8h_a038131283fc837d65129e5423fac4f5a}\label{motor_driver_8h_a038131283fc837d65129e5423fac4f5a}} 
+\index{motorDriver.h@{motorDriver.h}!brakeMotor@{brakeMotor}}
+\index{brakeMotor@{brakeMotor}!motorDriver.h@{motorDriver.h}}
+\doxysubsubsection{\texorpdfstring{brakeMotor()}{brakeMotor()}}
+{\footnotesize\ttfamily void brake\+Motor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmotor_type}{motor\+Type\+\_\+t}}}]{motor }\end{DoxyParamCaption})}
+
+
+
+Brakes the motor. This function sets the duty cycles to their maximums in order to slow down the motor quickly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor} & Motor struct type \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{motor_driver_8h_a2735ddcd20306b24f3fca99a8c84e9d6}\label{motor_driver_8h_a2735ddcd20306b24f3fca99a8c84e9d6}} 
+\index{motorDriver.h@{motorDriver.h}!disableMotor@{disableMotor}}
+\index{disableMotor@{disableMotor}!motorDriver.h@{motorDriver.h}}
+\doxysubsubsection{\texorpdfstring{disableMotor()}{disableMotor()}}
+{\footnotesize\ttfamily void disable\+Motor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmotor_type}{motor\+Type\+\_\+t}}}]{motor }\end{DoxyParamCaption})}
+
+
+
+Disables the motor. This function deactivates the PWM channels for the motor to cease to function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor} & Motor struct type \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{motor_driver_8h_a5a210b7162a4a087fbb0f32a4b34eb47}\label{motor_driver_8h_a5a210b7162a4a087fbb0f32a4b34eb47}} 
+\index{motorDriver.h@{motorDriver.h}!enableMotor@{enableMotor}}
+\index{enableMotor@{enableMotor}!motorDriver.h@{motorDriver.h}}
+\doxysubsubsection{\texorpdfstring{enableMotor()}{enableMotor()}}
+{\footnotesize\ttfamily void enable\+Motor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmotor_type}{motor\+Type\+\_\+t}}}]{motor }\end{DoxyParamCaption})}
+
+
+
+Enables the motor. This function activates the PWM channels for the motor to run. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor} & Motor struct type \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{motor_driver_8h_a5538c47241a3699993a8aee1010cfb21}\label{motor_driver_8h_a5538c47241a3699993a8aee1010cfb21}} 
+\index{motorDriver.h@{motorDriver.h}!setDuty@{setDuty}}
+\index{setDuty@{setDuty}!motorDriver.h@{motorDriver.h}}
+\doxysubsubsection{\texorpdfstring{setDuty()}{setDuty()}}
+{\footnotesize\ttfamily void set\+Duty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmotor_type}{motor\+Type\+\_\+t}}}]{motor,  }\item[{int32\+\_\+t}]{DTY }\end{DoxyParamCaption})}
+
+
+
+Sets the duty cycle of a motor. This function takes a value from 0 to 255 (in int8) to apply PWM to drive a motor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor} & Motor struct type \\
+\hline
+{\em DTY} & The desired duty cycle of the motor \\
+\hline
+\end{DoxyParams}
